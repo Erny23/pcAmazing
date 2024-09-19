@@ -3,29 +3,27 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Roboto Regular";
+    font-weight: 400;
+    font-style: normal;
+    src: url("../assets/fonts/normal/Roboto-Regular.ttf") format("truetype");
+  }
 
-    @font-face {
-        font-family: "Roboto Regular";
-        font-weight: 400;
-        font-style: normal;
-        src: url("../assets/fonts/normal/Roboto-Regular.ttf") format("truetype");
-    }
-      
-    @font-face {
-        font-family: "Roboto Bold";
-        font-weight: 700;
-        font-style: normal;
-        src: url("../assets/fonts/normal/Roboto-bold.ttf") format("truetype");
-    }
+  @font-face {
+    font-family: "Roboto Bold";
+    font-weight: 700;
+    font-style: normal;
+    src: url("../assets/fonts/normal/Roboto-bold.ttf") format("truetype");
+  }
 
-    body {
-        font-family: "Roboto Regular";
-    }
+  body {
+    font-family: "Roboto Regular";
+  }
 
-    h1 {
-        font-family: "Roboto Bold";
-    }
-
+  h1 {
+    font-family: "Roboto Bold";
+  }
 }
 
 @font-face {
