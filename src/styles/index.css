@@ -11,6 +11,13 @@
   }
 
   @font-face {
+    font-family: "Roboto Medium";
+    font-weight: 500;
+    font-style: normal;
+    src: url("../assets/fonts/normal/Roboto-Medium.ttf") format("truetype");
+  }
+
+  @font-face {
     font-family: "Roboto Bold";
     font-weight: 700;
     font-style: normal;
@@ -23,6 +30,10 @@
 
   h1 {
     font-family: "Roboto Bold";
+  }
+
+  h2 {
+    font-family: "Roboto Medium";
   }
 }
 
@@ -38,13 +49,6 @@
   font-weight: 300;
   font-style: normal;
   src: url("../assets/fonts/normal/Roboto-Light.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Roboto Medium";
-  font-weight: 500;
-  font-style: normal;
-  src: url("../assets/fonts/normal/Roboto-Medium.ttf") format("truetype");
 }
 
 @font-face {
@@ -94,4 +98,8 @@
   font-weight: 900;
   font-style: italic;
   src: url("../assets/fonts/italic/Roboto-BlackItalic.ttf") format("truetype");
+}
+
+header div #megaNavbar #linksNav ul li {
+  font-size: 1.1rem;
 }
