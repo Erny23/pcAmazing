@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button, MegaMenu, Navbar } from 'flowbite-react';
+import { FaCartShopping } from "react-icons/fa6";
 
 const Option1 = () => {
     return (
@@ -15,9 +16,11 @@ const Option1 = () => {
                 </Navbar.Brand>
                 <div id="itemsNav" className="order-2 flex items-center">
                     <Link to="#" className="mr-1 rounded-lg px-4 py-2 text-sm font-medium text-gray-800" >
-                        Login
+                        <Button className="rounded-full bg-teal-500 hover:bg-blue-800">
+                            <h1 className="me-2">ORDER NOW</h1>
+                            <FaCartShopping className="h-full text-white" />
+                        </Button>
                     </Link>
-                    <Button>Sign up</Button>
                 </div>
                 <Navbar.Toggle />
                 <Navbar.Collapse id="linksNav">

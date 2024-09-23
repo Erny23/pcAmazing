@@ -10,6 +10,7 @@ const MegaNavbar = () => {
         "standard",
         "version 2",
         "version 3",
+        "version 4"
     ];
 
     const renderOptionSelected = () => {
@@ -29,6 +30,8 @@ const MegaNavbar = () => {
                 return (<megaNavbarOptions.option2 />);
             case 2:
                 return (<megaNavbarOptions.option3 />);
+            case 3:
+                return (<megaNavbarOptions.option4 />);
             default:
                 return (<megaNavbarOptions.option1 />);
         }

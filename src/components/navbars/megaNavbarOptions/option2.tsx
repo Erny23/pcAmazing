@@ -8,7 +8,7 @@ import { IoSearch } from "react-icons/io5";
 const Option2 = () => {
   return (
     <MegaMenu id="megaNavbar2">
-      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between space-x-8 p-4">
+      <div className="mx-auto flex flex-wrap items-center justify-between space-x-8 p-4">
         <Navbar.Brand className="gap-2 divide-x-2 divide-zinc-300">
           <Link to="/" className="me-4 flex flex-row">
             <img src="/Icon-PC-Amazing.ico" className="mr-1 h-16" alt="logo" />

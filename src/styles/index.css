@@ -157,6 +157,8 @@
 
 header div #megaNavbar #linksNav ul li a {
   font-size: 1rem;
+  font-weight: 700;
+  color: rgb(63 63 70 / var(--tw-text-opacity)) /* #3f3f46 */;
 }
 
 header div #megaNavbar2 #linksNav ul li a {
@@ -165,9 +167,38 @@ header div #megaNavbar2 #linksNav ul li a {
   color: rgb(63 63 70 / var(--tw-text-opacity)) /* #3f3f46 */;
 }
 
+header div #megaNavbar4 {
+  padding: 0;
+}
+
+header div #megaNavbar4 #categorySelector select {
+  background-color: transparent;
+  border-radius: 0;
+  height: 3rem;
+  border-left-width: .3rem;
+  border-top-width: .3rem;
+  border-bottom-width: .3rem;
+  border-right-width: 0;
+  border-color: rgb(161 161 170 / var(--tw-border-opacity)) /* #a1a1aa */;;
+  margin-bottom: .5rem;
+}
+
+header div #navLinks4 div.container div:hover {
+  cursor: pointer;
+  color: rgb(22 189 202 / var(--tw-bg-opacity)) /* #16bdca */;
+}
+
+header div #megaNavbar4 #categorySelector select:focus {
+  border: 0;
+}
+
 header div #megaNavbar2 #locationNav:hover svg.icon {
   color: white;
   background-color: rgb(22 189 202 / var(--tw-text-opacity)) /* #16bdca */;
+}
+
+header div #megaNavbar div div #linksNav ul {
+  gap: 1.5rem;
 }
 
 header div #megaNavbar2 div div #linksNav ul {
