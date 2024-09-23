@@ -4,16 +4,36 @@ import { GlobalContext } from '../../context/globalProvider';
 
 const SettingsControl = () => {
 
-    const { navOption, handleChangeNavOption } = React.useContext(GlobalContext);
+    const { screen, options, megaNavOption, navOption, movilNavOption, handleChangeNavOption } = React.useContext(GlobalContext);
 
-    const [ optionSelected, setOptionSelected ] = React.useState(navOption);
+    const [ optionSelected, setOptionSelected ] = React.useState(0);
 
     const handleOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const value = Number(event.target.value);
         setOptionSelected(value);
-        localStorage.setItem('navOption', JSON.stringify(value));
         handleChangeNavOption(value);
-    }
+        if (screen === "pc") {
+            localStorage.setItem('megaNavOption', JSON.stringify(value));
+        } else if (screen === "tablet") {
+            localStorage.setItem('navOption', JSON.stringify(value));
+        } else if (screen === "movil") {
+            localStorage.setItem('movilNavOption', JSON.stringify(value));
+        }
+    };
+
+    const actualOption = () => {
+        if (screen === "pc") {
+            setOptionSelected(megaNavOption);
+        } else if (screen === "tablet") {
+            setOptionSelected(navOption);
+        } else if (screen === "movil") {
+            setOptionSelected(movilNavOption);
+        }
+    };
+
+    React.useEffect(() => {
+        actualOption();
+    }, []);
 
   return (
     <>
@@ -23,9 +43,11 @@ const SettingsControl = () => {
                 <Label htmlFor="navOptions" value="Which layout option you want to use?" />
             </div>
             <Select id="navbarOptions" onChange={handleOptionChange} value={optionSelected} required>
-                <option value={0}>standard</option>
-                <option value={1}>option 2</option>
-                <option value={2}>option 3</option>
+                {options.map((option, index) => {
+                    return (
+                        <option key={index} value={index}>{option}</option>
+                    )
+                })}
             </Select>
         </div>
     </>

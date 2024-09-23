@@ -4,10 +4,16 @@ import { GlobalContext } from "../../context/globalProvider";
 
 const MegaNavbar = () => {
 
-    const { navOption, handleChangeNavOption } = React.useContext(GlobalContext);
+    const { megaNavOption, handleChangeNavOption, listOptions } = React.useContext(GlobalContext);
+
+    const optionsNav = [
+        "standard",
+        "version 2",
+        "version 3",
+    ];
 
     const renderOptionSelected = () => {
-        const option = localStorage.getItem('navOption');
+        const option = localStorage.getItem('megaNavOption');
         if (option) {
             handleChangeNavOption(Number(JSON.parse(option)));
         } else {
@@ -16,7 +22,7 @@ const MegaNavbar = () => {
     };
 
     const renderOption = () => {
-        switch (navOption) {
+        switch (megaNavOption) {
             case 0:
                 return (<megaNavbarOptions.option1 />);
             case 1:
@@ -31,6 +37,7 @@ const MegaNavbar = () => {
     React.useEffect(() => {
         renderOptionSelected();
         renderOption();
+        listOptions(optionsNav);
     }, []);
 
     return (

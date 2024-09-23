@@ -1,151 +1,159 @@
-import { Button, Navbar, Dropdown, DropdownItem } from 'flowbite-react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { Button, MegaMenu, Navbar } from 'flowbite-react';
 
 const Option1 = () => {
-  return (
-    <Navbar id="megaNavbar">
-            <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between space-x-36 p-4 xl:space-x-48 2xl:max-w-7xl 2xl:space-x-80">
+    return (
+        <MegaMenu id="megaNavbar">
+            <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between space-x-8 p-4 lg:space-x-36 xl:space-x-48 2xl:max-w-7xl 2xl:space-x-64">
                 <Navbar.Brand>
-                    <img src="/Icon-PC-Amazing.ico" className="mr-1 h-16" alt="logo" />
-                    <h1 className="self-center whitespace-nowrap text-2xl"><span className="text-teal-500">PC</span><span className="text-blue-800"> Amazing</span></h1>
+                    <Link to="/" className="flex flex-row">
+                        <img src="/Icon-PC-Amazing.ico" className="mr-1 h-16" alt="logo" />
+                        <h1 className="self-center whitespace-nowrap text-2xl">
+                            <span className="text-teal-500">PC</span><span className="text-blue-800"> Amazing</span>
+                        </h1>
+                    </Link>
                 </Navbar.Brand>
                 <div id="itemsNav" className="order-2 flex items-center">
-                    <Button href="#" className="bg-teal-500 text-white hover:bg-blue-800">Sign up</Button>
+                    <Link to="#" className="mr-1 rounded-lg px-4 py-2 text-sm font-medium text-gray-800" >
+                        Login
+                    </Link>
+                    <Button>Sign up</Button>
                 </div>
                 <Navbar.Toggle />
                 <Navbar.Collapse id="linksNav">
-                    <li>
-                        <Link to="/" className="text-gray-600">Home</Link>
-                    </li>
                     <Navbar.Link>
-                        <Dropdown label="" dismissOnClick={false} renderTrigger={() => <span className="cursor-pointer">Shop</span>} trigger="hover">
-                            <Dropdown.Header>
-                                <h2>Dropdown 1</h2>
-                            </Dropdown.Header>
-                            <Dropdown.Divider />
-                            <div className="grid grid-cols-3 gap-2">
-                                <div>
-                                    <DropdownItem>
+                        <Link to="/">
+                            Home
+                        </Link>
+                    </Navbar.Link>
+                    <Navbar.Link>
+                        <div id="universeio-tooltip-nav-container">
+                            <div className="text">Shop</div>
+                            <div className="tooltip grid w-[40rem] grid-cols-3 gap-2 px-5 py-3">
+                                <ul>
+                                    <li>
                                         <Link to="#">
                                             About Us
                                         </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
+                                    </li>
+                                    <li>
                                         <Link to="#">
                                             Library
                                         </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
+                                    </li>
+                                    <li>
                                         <Link to="#">
                                             Resources
                                         </Link>
-                                    </DropdownItem>
-                                </div>
-                                <div>
-                                    <DropdownItem>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
                                         <Link to="#">
                                             Pro Version
                                         </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
+                                    </li>
+                                    <li>
                                         <Link to="#">
                                             Contact Us
                                         </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
+                                    </li>
+                                    <li>
                                         <Link to="#">
                                             Support Center
                                         </Link>
-                                    </DropdownItem>
-                                </div>
-                                <div>
-                                    <DropdownItem>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
                                         <Link to="#">
                                             Terms
                                         </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
+                                    </li>
+                                    <li>
                                         <Link to="#">
                                             Blog
                                         </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
+                                    </li>
+                                    <li>
                                         <Link to="#">
                                             Newsletter
                                         </Link>
-                                    </DropdownItem>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
-                        </Dropdown>
+                        </div>
                     </Navbar.Link>
                     <Navbar.Link>
-                        <Dropdown label="" dismissOnClick={false} renderTrigger={() => <span className="cursor-pointer">Team</span>} trigger="hover">
-                            <Dropdown.Header>
-                                <h2>Dropdown 2</h2>
-                            </Dropdown.Header>
-                            <Dropdown.Divider />
-                            <div className="grid grid-cols-3 gap-2">
-                                <div>
-                                    <DropdownItem>
+                        <div id="universeio-tooltip-nav-container">
+                            <div className="text">Team</div>
+                            <div className="tooltip grid w-[50rem] grid-cols-4 gap-2 px-5 py-3">
+                                <ul className="mt-4">
+                                    <li>
                                         <Link to="#">
                                             About Us
                                         </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
+                                    </li>
+                                    <li>
                                         <Link to="#">
                                             Library
                                         </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
+                                    </li>
+                                    <li>
                                         <Link to="#">
                                             Resources
                                         </Link>
-                                    </DropdownItem>
-                                </div>
-                                <div>
-                                    <DropdownItem>
+                                    </li>
+                                </ul>
+                                <ul className="mt-4">
+                                    <li>
                                         <Link to="#">
                                             Pro Version
                                         </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
+                                    </li>
+                                    <li>
                                         <Link to="#">
                                             Contact Us
                                         </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
+                                    </li>
+                                    <li>
                                         <Link to="#">
                                             Support Center
                                         </Link>
-                                    </DropdownItem>
-                                </div>
-                                <div>
-                                    <DropdownItem>
+                                    </li>
+                                </ul>
+                                <ul className="mt-4">
+                                    <li>
                                         <Link to="#">
                                             Terms
                                         </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
+                                    </li>
+                                    <li>
                                         <Link to="#">
                                             Blog
                                         </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
+                                    </li>
+                                    <li>
                                         <Link to="#">
                                             Newsletter
                                         </Link>
-                                    </DropdownItem>
+                                    </li>
+                                </ul>
+                                <div className="py-3">
+                                    <img className="rounded-lg" src="/img-navbar-tooltip.jpg" />
                                 </div>
                             </div>
-                        </Dropdown>
+                        </div>
                     </Navbar.Link>
-                    <li>
-                        <Link to="#" className="text-gray-600">Contact</Link>
-                    </li>
+                    <Navbar.Link>
+                        <Link to="#">
+                            Contact
+                        </Link>
+                    </Navbar.Link>
                 </Navbar.Collapse>
             </div>
-        </Navbar>
-  )
+        </MegaMenu>
+    );
 }
 
-export default Option1
+export default Option1;

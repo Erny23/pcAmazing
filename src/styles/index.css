@@ -100,6 +100,76 @@
   src: url("../assets/fonts/italic/Roboto-BlackItalic.ttf") format("truetype");
 }
 
-header div #megaNavbar #linksNav ul li {
-  font-size: 1.1rem;
+#root div.fixed.inset-0.z-30 {
+  background-color: transparent;
+}
+
+/* transición */
+.icon {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-delay: 75ms;
+}
+
+/* tooltip */
+#universeio-tooltip-nav-container {
+  position: relative;
+  display: inline-block;
+}
+
+#universeio-tooltip-nav-container div.text {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#universeio-tooltip-nav-container div.tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  background: white;
+  color: grey;
+  border-radius: 0 0 4px 4px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  -ms-border-radius: 0 0 4px 4px;
+  -o-border-radius: 0 0 4px 4px;
+}
+
+#universeio-tooltip-nav-container div.tooltip ul li {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#universeio-tooltip-nav-container:hover div.tooltip {
+  top: 4.5rem;
+  opacity: 1;
+  visibility: visible;
+  background: white;
+  transform: translate(-50%, -5px);
+}
+
+header div #megaNavbar #linksNav ul li a {
+  font-size: 1rem;
+}
+
+header div #megaNavbar2 #linksNav ul li a {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(63 63 70 / var(--tw-text-opacity)) /* #3f3f46 */;
+}
+
+header div #megaNavbar2 #locationNav:hover svg.icon {
+  color: white;
+  background-color: rgb(22 189 202 / var(--tw-text-opacity)) /* #16bdca */;
+}
+
+header div #megaNavbar2 div div #linksNav ul {
+  gap: 1.5rem;
 }

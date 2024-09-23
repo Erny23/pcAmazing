@@ -1,37 +1,17 @@
 import React from "react";
 import * as components from "../components";
+import { GlobalContext } from "../context/globalProvider";
 
 const Header = () => {
 
-    const [ movil, setMovil ] = React.useState(false);
-    const [ tablet, setTablet ] = React.useState(false);
-
-    React.useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth < 640) {
-                return (setMovil(true), setTablet(false));
-            } else if (window.innerWidth < 768) {
-                return (setMovil(false), setTablet(true));
-            } else {
-                return (setMovil(false), setTablet(false));
-            }
-        };
-
-        handleResize();
-
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+    const { screen } = React.useContext(GlobalContext);
 
     return (
         <header className="bg-zinc-800">
             <div>
-                {movil && !tablet ? <components.movilNavbar /> : null}
-                {!movil && tablet ? <components.navbar /> : null}
-                {movil || tablet ? null : <components.megaNavbar />}
+                {screen === "movil" ? <components.movilNavbar /> : null}
+                {screen === "tablet" ? <components.navbar /> : null}
+                {screen === "pc" ? <components.megaNavbar /> : null}
             </div>
         </header>
     )
