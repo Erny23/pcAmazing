@@ -10,10 +10,11 @@ const GlobalProvider: React.FC<{children: React.ReactNode}> = ({ children }) => 
     const [ megaNavOption, setMegaNavOption ] = React.useState(Number(localStorage.getItem("megaNavOption")) | 0);
     const [ navOption, setNavOption ] = React.useState(Number(localStorage.getItem("navOption")) | 0);
     const [ movilNavOption, setMovilNavOption ] = React.useState(Number(localStorage.getItem("movilNavOption")) | 0);
+    const [ background, setBackground ] = React.useState(Number(localStorage.getItem("backgroundOption")) | 0);
 
     const listOptions = (options: string[]) => {
         setOptions(options);
-    }
+    };
 
     const handleChangeNavOption = (option: number) => {
         if (screen === "pc" && megaNavOption !== option) {
@@ -29,6 +30,26 @@ const GlobalProvider: React.FC<{children: React.ReactNode}> = ({ children }) => 
         } else if (screen === "movil") {
             localStorage.setItem('movilNavOption', JSON.stringify(option));
         }
+    };
+
+    const handleChangeBackNav = (option: number) => {
+        if (background === 0 && option === 0) {
+            return
+        } else {
+            setBackground(option);
+        }
+    };
+
+    const contextValues = {
+        screen, 
+        options, 
+        megaNavOption, 
+        navOption, 
+        movilNavOption, 
+        background, 
+        handleChangeNavOption, 
+        listOptions, 
+        handleChangeBackNav
     };
 
     React.useEffect(() => {
@@ -52,7 +73,7 @@ const GlobalProvider: React.FC<{children: React.ReactNode}> = ({ children }) => 
     }, []);
 
     return (
-        <GlobalContext.Provider value={{ screen, options, megaNavOption, navOption, movilNavOption, handleChangeNavOption, listOptions }}>
+        <GlobalContext.Provider value={contextValues}>
             {children}
         </GlobalContext.Provider>
     )

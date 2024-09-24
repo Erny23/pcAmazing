@@ -167,6 +167,11 @@ header div #megaNavbar2 #linksNav ul li a {
   color: rgb(63 63 70 / var(--tw-text-opacity)) /* #3f3f46 */;
 }
 
+header div #megaNavbar2 #locationNav:hover svg.icon {
+  color: white;
+  background-color: rgb(22 189 202 / var(--tw-text-opacity)) /* #16bdca */;
+}
+
 header div #megaNavbar4 {
   padding: 0;
 }
@@ -192,15 +197,47 @@ header div #megaNavbar4 #categorySelector select:focus {
   border: 0;
 }
 
-header div #megaNavbar2 #locationNav:hover svg.icon {
-  color: white;
-  background-color: rgb(22 189 202 / var(--tw-text-opacity)) /* #16bdca */;
+header div #megaNavbar4 div.flex.cursor-pointer.flex-row.items-center.gap-2.text-zinc-400:hover #shoppingCart {
+  background-color: rgb(30 66 159 / var(--tw-text-opacity)) /* #1e429f */;
 }
 
+/* separación de items en bara de navegación */
 header div #megaNavbar div div #linksNav ul {
-  gap: 1.5rem;
+  gap: .5rem;
 }
 
 header div #megaNavbar2 div div #linksNav ul {
-  gap: 1.5rem;
+  gap: .5rem;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* Posición de los tooltips de barra de navegación */
+  #megaNavbar2 #linksNav #universeio-tooltip-nav-container:hover div.tooltip {
+    top: 4.2rem;
+  }
+
+  #megaNavbar2 #linksNav ul li:nth-child(2) #universeio-tooltip-nav-container div.tooltip {
+    left: 0;
+  }
+
+  #megaNavbar2 #linksNav ul li:nth-child(3) #universeio-tooltip-nav-container div.tooltip {
+    left: -10rem;
+  }
+}
+
+/* Desde 1280px en adelante */
+@media (min-width: 1280px) {
+  /* separación de items en barra de navegación */
+  header div #megaNavbar div div #linksNav ul {
+    gap: 1.5rem;
+  }
+  
+  header div #megaNavbar2 div div #linksNav ul {
+    gap: 1.5rem;
+  }
+
+  /* Posición de tooltip de barra de navegación */
+  #megaNavbar2 #linksNav ul li:nth-child(3) #universeio-tooltip-nav-container div.tooltip {
+    left: -10rem;
+  }
 }
