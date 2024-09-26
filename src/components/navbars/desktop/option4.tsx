@@ -65,11 +65,27 @@ const Option4 = () => {
                                 <input className="w-4/6 border-4 border-zinc-400" type="text" />
                                 <IoSearch className="size-12 cursor-pointer bg-teal-400 p-2 text-white hover:bg-blue-800" />
                             </form>
-                            <div className="flex cursor-pointer flex-row items-center gap-2 text-zinc-400">
-                                <FaCartShopping id="shoppingCart" className="size-12 h-full bg-teal-400 p-2 text-white" />
-                                <div className="leading-4">
-                                    <h1 className="text-lg">SHOPPING CART</h1>
-                                    <h1>2 ITEM(S) - <span className="text-red-600">$365.00</span></h1>
+                            <div id="universeio-tooltip-nav-container">
+                                <div className="flex cursor-pointer flex-row items-center gap-2 text-zinc-400">
+                                    <FaCartShopping id="shoppingCart" className="size-12 h-full bg-teal-400 p-2 text-white" />
+                                    <div className="leading-4">
+                                        <h1 className="text-lg">SHOPPING CART</h1>
+                                        <h1>2 ITEM(S) - <span className="text-red-600">$365.00</span></h1>
+                                    </div>
+                                </div>
+                                <div className="tooltip w-80 px-5 py-3">
+                                    <ul className="mt-4">
+                                        <li>
+                                            <Link to="#">
+                                                Product1
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="#">
+                                                Product2
+                                            </Link>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

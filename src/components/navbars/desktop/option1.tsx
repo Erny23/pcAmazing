@@ -6,23 +6,23 @@ import { GlobalContext } from "../../../context/globalProvider";
 
 const Option1 = () => {
 
-    const { background } = React.useContext(GlobalContext);
+    const { backgroundNav } = React.useContext(GlobalContext);
 
     return (
-        <MegaMenu id="megaNavbar" className={`${background === 0 ? "bg-white" : "bg-transparent"} relative`}>
-            <div className={`${background === 1 ? "absolute" : "hidden"} inset-0 z-10 blur-sm`}></div>
+        <MegaMenu id="megaNavbar" className={`${backgroundNav === 0 ? "bg-white" : "bg-transparent"} relative`}>
+            <div className={`${backgroundNav === 1 ? "absolute" : "hidden"} inset-0 z-10 blur-sm`}></div>
             <div className="relative z-20 mx-auto flex max-w-5xl flex-wrap items-center justify-between space-x-28 p-4 xl:space-x-32 2xl:max-w-7xl 2xl:space-x-64">
                 <Navbar.Brand>
                     <Link to="/" className="flex flex-row">
                         <img src="/Icon-PC-Amazing.ico" className="mr-1 h-16" alt="logo" />
                         <h1 className="self-center whitespace-nowrap text-2xl">
-                            <span className="text-teal-500">PC</span><span className={`${background === 1 ? "text-white" : "text-blue-800"}`}> Amazing</span>
+                            <span className="text-teal-500">PC</span><span className={`${backgroundNav === 1 ? "text-white" : "text-blue-800"}`}> Amazing</span>
                         </h1>
                     </Link>
                 </Navbar.Brand>
                 <div id="itemsNav" className="order-2 flex items-center">
                     <Link to="#" className="mr-1 rounded-lg px-4 py-2 text-sm font-medium text-gray-800" >
-                        <Button className={`${background === 1 ? "border-2 border-white bg-transparent hover:border-teal-500 hover:bg-teal-500" : "bg-teal-500 hover:bg-blue-800"} rounded-full`}>
+                        <Button className={`${backgroundNav === 1 ? "border-2 border-white bg-transparent hover:border-teal-500 hover:bg-teal-500" : "bg-teal-500 hover:bg-blue-800"} rounded-full`}>
                             <h1 className="me-2">ORDER NOW</h1>
                             <FaCartShopping className="h-full text-white" />
                         </Button>
@@ -32,13 +32,13 @@ const Option1 = () => {
                 <Navbar.Collapse id="linksNav">
                     <Navbar.Link>
                         <Link to="/">
-                            <span className={`${background === 0 ? null : "text-white"}`}>Home</span>
+                            <span className={`${backgroundNav === 0 ? null : "text-white"}`}>Home</span>
                         </Link>
                     </Navbar.Link>
                     <Navbar.Link>
                         <div id="universeio-tooltip-nav-container">
                             <div className="text">
-                                <span className={`${background === 0 ? null : "text-white"}`}>Shop</span>
+                                <span className={`${backgroundNav === 0 ? null : "text-white"}`}>Shop</span>
                             </div>
                             <div className="tooltip grid w-[40rem] grid-cols-3 gap-2 px-5 py-3">
                                 <ul>
@@ -98,7 +98,7 @@ const Option1 = () => {
                     <Navbar.Link>
                         <div id="universeio-tooltip-nav-container">
                             <div className="text">
-                                <span className={`${background === 0 ? null : "text-white"}`}>Team</span>
+                                <span className={`${backgroundNav === 0 ? null : "text-white"}`}>Team</span>
                             </div>
                             <div className="tooltip grid w-[50rem] grid-cols-4 gap-2 px-5 py-3">
                                 <ul className="mt-4">
@@ -160,7 +160,7 @@ const Option1 = () => {
                     </Navbar.Link>
                     <Navbar.Link>
                         <Link to="#">
-                            <span className={`${background === 0 ? null : "text-white"}`}>Contact</span>
+                            <span className={`${backgroundNav === 0 ? null : "text-white"}`}>Contact</span>
                         </Link>
                     </Navbar.Link>
                 </Navbar.Collapse>

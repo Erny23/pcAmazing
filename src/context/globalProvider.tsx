@@ -5,16 +5,29 @@ export const GlobalContext = React.createContext<GlobalContextProps>(null as unk
 
 const GlobalProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
 
+    // Tamano de la pantalla actual
     const [ screen, setScreen ] = React.useState("");
-    const [ options, setOptions ] = React.useState([""]);
+    // opciones para la barra de navegación
+    const [ optionsNav, setOptionsNav ] = React.useState([""]);
     const [ megaNavOption, setMegaNavOption ] = React.useState(Number(localStorage.getItem("megaNavOption")) | 0);
     const [ navOption, setNavOption ] = React.useState(Number(localStorage.getItem("navOption")) | 0);
     const [ movilNavOption, setMovilNavOption ] = React.useState(Number(localStorage.getItem("movilNavOption")) | 0);
-    const [ background, setBackground ] = React.useState(Number(localStorage.getItem("backgroundOption")) | 0);
+    // Fondo de la barra de navegación
+    const [ backgroundNav, setBackgroundNav ] = React.useState(Number(localStorage.getItem("backgroundOption")) | 0);
+    // Opciones para el carrusel
+    const [ optionsCarousel, setOptionsCarousel ] = React.useState([""]);
+    const [ desktopCarouselOption, setDesktopCarouselOption ] = React.useState(Number(localStorage.getItem("desktopCarouselOption")) | 0);
+    const [ tabletCarouselOption, setTabletCarouselOption ] = React.useState(Number(localStorage.getItem("tabletCarouselOption")) | 0);
+    const [ movilCarouselOption, setMovilCarouselOption ] = React.useState(Number(localStorage.getItem("movilCarouselOption")) | 0);
+    const [ isControlsCarousel, setIsControlsCarousel ] = React.useState(Boolean(localStorage.getItem("isControlsCarousel")));
 
-    const listOptions = (options: string[]) => {
-        setOptions(options);
+    const listOptionsNav = (options: string[]) => {
+        setOptionsNav(options);
     };
+
+    const listOptionsCarousel = (options: string[]) => {
+        setOptionsCarousel(options);
+    }
 
     const handleChangeNavOption = (option: number) => {
         if (screen === "pc" && megaNavOption !== option) {
@@ -33,23 +46,57 @@ const GlobalProvider: React.FC<{children: React.ReactNode}> = ({ children }) => 
     };
 
     const handleChangeBackNav = (option: number) => {
-        if (background === 0 && option === 0) {
+        if (backgroundNav === 0 && option === 0) {
             return
         } else {
-            setBackground(option);
+            setBackgroundNav(option);
+        }
+    };
+
+    const handleChangeCarouselOption = (option: number) => {
+        if (screen === "pc" && desktopCarouselOption !== option) {
+            setDesktopCarouselOption(option);
+        } else if (screen === "tablet" && tabletCarouselOption !== option) {
+            setTabletCarouselOption(option);
+        } else if (screen === "movil" && movilCarouselOption !== option) {
+            setMovilCarouselOption(option);
+        } else if (screen === "pc") {
+            localStorage.setItem('desktopCarouselOption', JSON.stringify(option));
+        } else if (screen === "tablet") {
+            localStorage.setItem('tabletCarouselOption', JSON.stringify(option));
+        } else if (screen === "movil") {
+            localStorage.setItem('movilCarouselOption', JSON.stringify(option));
+        }
+    };
+
+    const handleChangeControlsCarousel = (option: boolean) => {
+        if (isControlsCarousel === true && option === false) {
+            setIsControlsCarousel(option);
+        } else if (isControlsCarousel === false && option === true) {
+            setIsControlsCarousel(option);
+        } else {
+            setIsControlsCarousel(true);
         }
     };
 
     const contextValues = {
         screen, 
-        options, 
+        optionsNav, 
+        optionsCarousel,
         megaNavOption, 
         navOption, 
         movilNavOption, 
-        background, 
+        desktopCarouselOption,
+        tabletCarouselOption,
+        movilCarouselOption,
+        backgroundNav, 
+        isControlsCarousel, 
         handleChangeNavOption, 
-        listOptions, 
-        handleChangeBackNav
+        listOptionsNav, 
+        listOptionsCarousel, 
+        handleChangeBackNav, 
+        handleChangeCarouselOption, 
+        handleChangeControlsCarousel
     };
 
     React.useEffect(() => {

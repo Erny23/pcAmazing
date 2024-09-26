@@ -1,10 +1,10 @@
 import React from "react";
-import * as movilNavbarOptions from "./movilNavbarOptions";
+import * as movilNavbarOptions from "./movil";
 import { GlobalContext } from "../../context/globalProvider";
 
 const MovilNavbar = () => {
 
-  const { navOption, handleChangeNavOption, listOptions } = React.useContext(GlobalContext);
+  const { navOption, handleChangeNavOption, listOptionsNav } = React.useContext(GlobalContext);
 
   const optionsNav = [
     "standard",
@@ -37,7 +37,7 @@ const MovilNavbar = () => {
   React.useEffect(() => {
     renderOptionSelected();
     renderOption();
-    listOptions(optionsNav);
+    listOptionsNav(optionsNav);
   }, []);
 
   return (

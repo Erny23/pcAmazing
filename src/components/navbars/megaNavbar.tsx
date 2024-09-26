@@ -1,10 +1,10 @@
 import React from "react";
-import * as megaNavbarOptions from "./megaNavbarOptions";
+import * as megaNavbarOptions from "./desktop";
 import { GlobalContext } from "../../context/globalProvider";
 
 const MegaNavbar = () => {
 
-    const { megaNavOption, handleChangeNavOption, listOptions } = React.useContext(GlobalContext);
+    const { megaNavOption, handleChangeNavOption, listOptionsNav } = React.useContext(GlobalContext);
 
     const optionsNav = [
         "standard",
@@ -40,7 +40,7 @@ const MegaNavbar = () => {
     React.useEffect(() => {
         renderOptionSelected();
         renderOption();
-        listOptions(optionsNav);
+        listOptionsNav(optionsNav);
     }, []);
 
     return (

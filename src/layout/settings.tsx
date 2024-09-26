@@ -17,7 +17,7 @@ const Settings = () => {
                     <components.settingsControl />
                 </Drawer.Items>
             </Drawer>
-            <div className="fixed left-0 top-36">
+            <div className="fixed left-0 top-56 z-30">
                 <Button className="rounded-l-sm bg-white p-0 text-gray-700" onClick={() => setIsOpen(true)}>
                     <FaGear size={32} />
                 </Button>

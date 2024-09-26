@@ -1,10 +1,10 @@
 import React from "react";
-import * as navbarOptions from "./navbarOptions";
+import * as navbarOptions from "./tablet";
 import { GlobalContext } from "../../context/globalProvider";
 
 const Navbar = () => {
 
-  const { navOption, handleChangeNavOption, listOptions } = React.useContext(GlobalContext);
+  const { navOption, handleChangeNavOption, listOptionsNav } = React.useContext(GlobalContext);
 
   const optionsNav = [
     "standard",
@@ -37,7 +37,7 @@ const Navbar = () => {
   React.useEffect(() => {
     renderOptionSelected();
     renderOption();
-    listOptions(optionsNav);
+    listOptionsNav(optionsNav);
   }, []);
 
   return (

@@ -3,9 +3,17 @@ export interface GlobalContextProps {
     megaNavOption: number;
     navOption: number;
     movilNavOption: number;
-    options: string[];
-    background: number;
+    desktopCarouselOption: number;
+    tabletCarouselOption: number;
+    movilCarouselOption: number;
+    optionsNav: string[];
+    optionsCarousel: string[];
+    backgroundNav: number;
+    isControlsCarousel: boolean;
     handleChangeNavOption: (option: number) => void;
-    listOptions: (options: string[]) => void;
+    listOptionsNav: (options: string[]) => void;
+    listOptionsCarousel: (options: string[]) => void;
     handleChangeBackNav: (option: number) => void;
+    handleChangeCarouselOption: (option: number) => void;
+    handleChangeControlsCarousel: (option: boolean) => void;
 }

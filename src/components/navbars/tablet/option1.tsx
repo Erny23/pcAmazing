@@ -1,33 +1,38 @@
-import { Button, Navbar, Dropdown, DropdownItem } from 'flowbite-react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Navbar, Dropdown, DropdownItem } from 'flowbite-react';
+import { IoIosArrowDown } from "react-icons/io";
+import { GlobalContext } from '../../../context/globalProvider';
 
 const Option1 = () => {
+
+    const { backgroundNav } = React.useContext(GlobalContext);
+
     return (
-        <Navbar id="navbar">
-            <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between space-x-8 p-4">
+        <Navbar id="navbar" className={`${backgroundNav === 0 ? "bg-white" : "bg-transparent"} relative`}>
+            <div className={`${backgroundNav === 1 ? "absolute" : "hidden"} inset-0 z-10 blur-sm`}></div>
                 <Navbar.Brand>
                     <Link to="/" className="flex flex-row">
                         <img src="/Icon-PC-Amazing.ico" className="mr-1 h-16" alt="logo" />
                         <h1 className="self-center whitespace-nowrap text-2xl">
                             <span className="text-teal-500">PC</span>
-                            <span className="text-blue-800"> Amazing</span>
+                            <span className={`${backgroundNav === 1 ? "text-white" : "text-blue-800"}`}> Amazing</span>
                         </h1>
                     </Link>
                 </Navbar.Brand>
-                <div className="order-2 flex items-center">
-                    <Button className="bg-teal-500 text-white hover:bg-blue-800">Sign up</Button>
-                </div>
-                <Navbar.Toggle />
-                <Navbar.Collapse>
+                <ul id="linksNav" className="flex flex-row gap-8">
                     <li>
-                        <Link to="/" className="text-gray-600">Home</Link>
+                        <Link to="/" className="text-gray-600">
+                            <span className={`${backgroundNav === 0 ? null : "text-white"}`}>Home</span>
+                        </Link>
                     </li>
-                    <Navbar.Link>
-                        <Dropdown label="" dismissOnClick={false} renderTrigger={() => <span className="cursor-pointer">Shop</span>} trigger="hover">
-                            <Dropdown.Header>
-                                <h2>Dropdown 1</h2>
-                            </Dropdown.Header>
-                            <Dropdown.Divider />
+                    <li>
+                        <Dropdown label="" dismissOnClick={false} renderTrigger={() => 
+                            <div className="text flex flex-row items-center">
+                                <span className={`${backgroundNav === 0 ? null : "text-white"}`}>Shop</span>
+                                <IoIosArrowDown className={`${backgroundNav === 0 ? null : "text-white"}`} />
+                            </div>
+                        } trigger="click">
                             <div className="grid grid-cols-3 gap-2">
                                 <div>
                                     <DropdownItem>
@@ -82,13 +87,14 @@ const Option1 = () => {
                                 </div>
                             </div>
                         </Dropdown>
-                    </Navbar.Link>
-                    <Navbar.Link>
-                        <Dropdown label="" dismissOnClick={false} renderTrigger={() => <span className="cursor-pointer">Team</span>} trigger="hover">
-                            <Dropdown.Header>
-                                <h2>Dropdown 2</h2>
-                            </Dropdown.Header>
-                            <Dropdown.Divider />
+                    </li>
+                    <li>
+                        <Dropdown label="" dismissOnClick={false} renderTrigger={() => 
+                            <div className="text flex flex-row items-center">
+                                <span className={`${backgroundNav === 0 ? null : "text-white"}`}>Team</span>
+                                <IoIosArrowDown className={`${backgroundNav === 0 ? null : "text-white"}`} />
+                            </div>
+                        } trigger="click">
                             <div className="grid grid-cols-3 gap-2">
                                 <div>
                                     <DropdownItem>
@@ -143,12 +149,13 @@ const Option1 = () => {
                                 </div>
                             </div>
                         </Dropdown>
-                    </Navbar.Link>
-                    <li>
-                        <Link to="#" className="text-gray-600">Contact</Link>
                     </li>
-                </Navbar.Collapse>
-            </div>
+                    <li>
+                        <Link to="#" className="text-gray-600">
+                            <span className={`${backgroundNav === 0 ? null : "text-white"}`}>Contact</span>
+                        </Link>
+                    </li>
+                </ul>
         </Navbar>
     )
 }
