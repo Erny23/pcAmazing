@@ -7,3 +7,6 @@ export { default as movilNavbar } from "./navbars/movilNavbar";
 export { default as desktopCarousel } from "./carousels/desktopCarousel";
 export { default as tabletCarousel } from "./carousels/tabletCarousel";
 export { default as movilCarousel } from "./carousels/movilCarousel";
+export { default as desktopBanner } from "./banners/desktopBanner";
+export { default as tabletBanner } from "./banners/tabletBanner";
+export { default as movilBanner } from "./banners/movilBanner";

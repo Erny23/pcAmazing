@@ -12,9 +12,9 @@ const Option2 = () => {
   const { backgroundNav } = React.useContext(GlobalContext);
 
   return (
-    <MegaMenu id="megaNavbar2" className={`${backgroundNav === 0 ? "bg-white" : "bg-transparent"} relative`}>
+    <MegaMenu id="megaNavbar2" className={`${backgroundNav === 0 ? "bg-white" : "bg-transparent py-0"} relative`}>
       <div className={`${backgroundNav === 1 ? "absolute" : "hidden"} inset-0 z-10 blur-sm`}></div>
-      <div className="relative z-20 mx-auto flex flex-wrap items-center justify-between space-x-4 p-4 xl:space-x-8 2xl:space-x-20">
+      <div className={`${backgroundNav === 1 ? "absolute inset-x-16 top-0" : "relative"} z-20 mx-auto flex flex-wrap items-center justify-between space-x-4 p-4 xl:space-x-8 2xl:space-x-20`}>
         <Navbar.Brand className="gap-2 divide-x-2 divide-zinc-300">
           <Link to="/" className="me-2 flex flex-row 2xl:me-4">
             <img src="/Icon-PC-Amazing.ico" className="mr-1 h-14 xl:h-16" alt="logo" />
@@ -176,7 +176,7 @@ const Option2 = () => {
             </div>
           </Navbar.Link>
           <Navbar.Link>
-            <Link to="#">
+            <Link to="/contact">
               <span className={`${backgroundNav === 0 ? null : "text-white"}`}>Contact</span>
             </Link>
           </Navbar.Link>

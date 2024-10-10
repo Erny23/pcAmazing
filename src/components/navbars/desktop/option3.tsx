@@ -11,8 +11,8 @@ const Option3 = () => {
   const { backgroundNav } = React.useContext(GlobalContext);
 
   return (
-    <div className={`${backgroundNav === 0 ? "bg-white" : "bg-transparent"} relative`}>
-      <div className={`${backgroundNav === 1 ? "absolute" : "hidden"} inset-0 z-10 blur-sm`}></div>
+    <div className={`${backgroundNav === 0 ? "relative bg-white" : "absolute inset-x-0 top-0 bg-transparent"}`}>
+      <div className={`${backgroundNav === 1 ? "absolute" : "hidden"} inset-x-0 top-0 z-10 h-20 blur-sm`}></div>
       <MegaMenu id="megaNavbar3" className="container relative z-20 mx-auto bg-transparent px-4">
         <Navbar.Collapse>
           <Navbar.Link>

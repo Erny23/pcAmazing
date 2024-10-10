@@ -15,11 +15,18 @@ const GlobalProvider: React.FC<{children: React.ReactNode}> = ({ children }) => 
     // Fondo de la barra de navegación
     const [ backgroundNav, setBackgroundNav ] = React.useState(Number(localStorage.getItem("backgroundOption")) | 0);
     // Opciones para el carrusel
+    const [ isCarousel, setIsCarousel ] = React.useState(Boolean(localStorage.getItem("isCarousel")));
     const [ optionsCarousel, setOptionsCarousel ] = React.useState([""]);
     const [ desktopCarouselOption, setDesktopCarouselOption ] = React.useState(Number(localStorage.getItem("desktopCarouselOption")) | 0);
     const [ tabletCarouselOption, setTabletCarouselOption ] = React.useState(Number(localStorage.getItem("tabletCarouselOption")) | 0);
     const [ movilCarouselOption, setMovilCarouselOption ] = React.useState(Number(localStorage.getItem("movilCarouselOption")) | 0);
     const [ isControlsCarousel, setIsControlsCarousel ] = React.useState(Boolean(localStorage.getItem("isControlsCarousel")));
+    // Opciones para el banner
+    const [ isBanner, setIsBanner ] = React.useState(Boolean(localStorage.getItem("isBanner")));
+    const [ optionsBanner, setOptionsBanner ] = React.useState([""]);
+    const [ desktopBannerOption, setDesktopBannerOption ] = React.useState(Number(localStorage.getItem("desktopBannerOption")) | 0);
+    const [ tabletBannerOption, setTabletBannerOption ] = React.useState(Number(localStorage.getItem("tabletBannerOption")) | 0);
+    const [ movilBannerOption, setMovilBannerOption ] = React.useState(Number(localStorage.getItem("movilBannerOption")) | 0);
 
     const listOptionsNav = (options: string[]) => {
         setOptionsNav(options);
@@ -27,7 +34,11 @@ const GlobalProvider: React.FC<{children: React.ReactNode}> = ({ children }) => 
 
     const listOptionsCarousel = (options: string[]) => {
         setOptionsCarousel(options);
-    }
+    };
+
+    const listOptionsBanner = (options: string[]) => {
+        setOptionsBanner(options);
+    };
 
     const handleChangeNavOption = (option: number) => {
         if (screen === "pc" && megaNavOption !== option) {
@@ -69,6 +80,16 @@ const GlobalProvider: React.FC<{children: React.ReactNode}> = ({ children }) => 
         }
     };
 
+    const handleChangeIsCarousel = (option: boolean) => {
+        if (isControlsCarousel === true && option === false) {
+            setIsCarousel(option);
+        } else if (isControlsCarousel === false && option === true) {
+            setIsCarousel(option);
+        } else {
+            setIsCarousel(true);
+        }
+    };
+
     const handleChangeControlsCarousel = (option: boolean) => {
         if (isControlsCarousel === true && option === false) {
             setIsControlsCarousel(option);
@@ -76,6 +97,32 @@ const GlobalProvider: React.FC<{children: React.ReactNode}> = ({ children }) => 
             setIsControlsCarousel(option);
         } else {
             setIsControlsCarousel(true);
+        }
+    };
+
+    const handleChangeIsBanner = (option: boolean) => {
+        if (isBanner === true && option === false) {
+            setIsBanner(option);
+        } else if (isControlsCarousel === false && option === true) {
+            setIsBanner(option);
+        } else {
+            setIsBanner(true);
+        }
+    };
+
+    const handleChangeBannerOption = (option: number) => {
+        if (screen === "pc" && desktopBannerOption !== option) {
+            setDesktopBannerOption(option);
+        } else if (screen === "tablet" && tabletBannerOption !== option) {
+            setTabletBannerOption(option);
+        } else if (screen === "movil" && movilBannerOption !== option) {
+            setMovilBannerOption(option);
+        } else if (screen === "pc") {
+            localStorage.setItem('desktopBannerOption', JSON.stringify(option));
+        } else if (screen === "tablet") {
+            localStorage.setItem('tabletBannerOption', JSON.stringify(option));
+        } else if (screen === "movil") {
+            localStorage.setItem('movilBannerOption', JSON.stringify(option));
         }
     };
 
@@ -90,13 +137,23 @@ const GlobalProvider: React.FC<{children: React.ReactNode}> = ({ children }) => 
         tabletCarouselOption,
         movilCarouselOption,
         backgroundNav, 
+        isCarousel, 
         isControlsCarousel, 
+        isBanner, 
+        optionsBanner, 
+        desktopBannerOption, 
+        tabletBannerOption, 
+        movilBannerOption, 
         handleChangeNavOption, 
         listOptionsNav, 
         listOptionsCarousel, 
         handleChangeBackNav, 
         handleChangeCarouselOption, 
-        handleChangeControlsCarousel
+        handleChangeIsCarousel, 
+        handleChangeControlsCarousel, 
+        handleChangeIsBanner, 
+        handleChangeBannerOption ,
+        listOptionsBanner
     };
 
     React.useEffect(() => {

@@ -41,7 +41,7 @@ const Option1 = () => {
     infinite: true,
     autoplay: true,
     speed: 1000,
-    autoplaySpeed: 9000,
+    autoplaySpeed: 12000,
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
@@ -54,14 +54,14 @@ const Option1 = () => {
         style={{
           padding: "10px",
           position: "absolute",
-          top: "40%",
+          top: "45%",
           bottom: "auto",
           width: "auto",
           height: "auto",
           zIndex: 20
         }}
       >
-        <ul id="carouselDots" style={{ margin: "0px" }}> {dots} </ul>
+        <ul id="carouselDots1" style={{ margin: "0px" }}> {dots} </ul>
       </div>
     ),
     customPaging: (i: number) => (
@@ -82,7 +82,7 @@ const Option1 = () => {
     infinite: true,
     autoplay: true,
     speed: 1000,
-    autoplaySpeed: 9000,
+    autoplaySpeed: 12000,
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
@@ -96,41 +96,41 @@ const Option1 = () => {
       return (
         <Slider {...settings1}>
           <div>
-            <div className="flex h-screen items-center justify-center gap-8 space-x-0">
-              <div className="relative size-[28rem] xl:size-[32rem] 2xl:size-[36rem]">
-                <img id="imgRight" className="absolute left-24 h-full" src="/iphon16-pro-max.png" />
+            <div className="flex h-screen w-full items-center justify-center gap-8">
+              <div className="imgCarousel1Left relative h-[28rem] w-1/3 xl:h-[32rem] 2xl:h-[36rem]">
+                <img id="imgRight" className="absolute right-0 h-full" src="/iphon16-pro-max.png" />
               </div>
-              <div id="slickText" className="relative w-1/3 font-sans text-zinc-600 xl:w-1/2">
-                <h4 className="absolute -top-20 text-xl xl:-top-24 xl:text-2xl">From $1,199.99</h4>
-                <h1 className="absolute -top-12 text-4xl uppercase xl:text-5xl">new smart phone</h1>
-                <h3 className="absolute -top-2.5 text-3xl font-light xl:top-3 xl:text-4xl">iPhone 16 Pro Max</h3>
-                <p className="absolute top-8 max-w-md font-light xl:top-16 xl:text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero pariatur minima laboriosam.</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="flex h-screen items-center justify-center gap-8 space-x-16 xl:ms-8 xl:space-x-0">
-              <div id="slickText" className="relative w-1/3 font-sans text-zinc-600 xl:w-1/3">
-                <h4 className="absolute -top-20 text-xl xl:-top-24 xl:text-2xl">From $799.99</h4>
-                <h1 className="absolute -top-12 text-4xl uppercase xl:text-5xl">apple pro smartphone</h1>
-                <h3 className="absolute top-8 text-3xl font-light xl:top-2 xl:text-4xl">iPhone 15 Pro</h3>
-                <p className="absolute top-20 max-w-md font-light xl:top-14 xl:text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero pariatur minima laboriosam.</p>
-              </div>
-              <div className="relative size-[28rem] xl:size-[32rem] 2xl:size-[36rem]">
-                <img id="imgLeft" className="absolute h-full" src="/iphon15-pro.png" />
+              <div id="slickText" className="relative w-1/2 font-sans text-zinc-600">
+                <h4 className="absolute -top-24 text-2xl xl:text-2xl xl:ms-12">From $1,199.99</h4>
+                <h1 className="absolute -top-12 text-5xl uppercase xl:ms-12">new smart phone</h1>
+                <h3 className="absolute -top-1 text-4xl font-light xl:top-3 xl:ms-12">iPhone 16 Pro Max</h3>
+                <p className="absolute top-10 max-w-md font-light xl:top-14 xl:text-xl xl:ms-12">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero pariatur minima laboriosam.</p>
               </div>
             </div>
           </div>
           <div>
-            <div className="flex h-screen items-center justify-center gap-8 space-x-0">
-              <div className="relative size-[28rem] xl:size-[32rem] 2xl:size-[36rem]">
-                <img id="imgRight" className="absolute left-24 h-full" src="/iphon14.png" />
+            <div className="flex h-screen w-full items-center justify-center gap-8">
+              <div id="slickText" className="relative w-1/2 font-sans text-zinc-600">
+                <h4 className="absolute -top-24 text-2xl xl:text-2xl 2xl:ms-96">From $799.99</h4>
+                <h1 className="absolute -top-12 text-5xl uppercase 2xl:ms-96">apple pro smartphone</h1>
+                <h3 className="absolute top-12 text-4xl font-light xl:top-2 2xl:ms-96">iPhone 15 Pro</h3>
+                <p className="absolute top-24 max-w-md font-light xl:top-14 xl:text-xl 2xl:ms-96">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero pariatur minima laboriosam.</p>
               </div>
-              <div id="slickText" className="relative w-2/5 font-sans text-zinc-600 xl:w-1/2">
-                <h4 className="absolute -top-20 text-xl xl:-top-24 xl:text-2xl">From $499.99</h4>
-                <h1 className="absolute -top-12 text-4xl uppercase xl:text-5xl">standard apple smartphone</h1>
-                <h3 className="absolute top-8 text-3xl font-light xl:top-14 xl:text-4xl 2xl:-top-2.5">iPhone 14</h3>
-                <p className="absolute top-20 max-w-md font-light xl:top-28 xl:text-xl 2xl:top-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero pariatur minima laboriosam.</p>
+              <div className="imgCarousel1Right relative h-[28rem] w-1/3 xl:h-[32rem] 2xl:h-[36rem]">
+                <img id="imgLeft" className="absolute left-0 h-full" src="/iphon15-pro.png" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="flex h-screen w-full items-center justify-center gap-8">
+              <div className="imgCarousel1Left relative h-[28rem] w-1/3 xl:h-[32rem] 2xl:h-[36rem]">
+                <img id="imgRight" className="absolute right-0 h-full" src="/iphon14.png" />
+              </div>
+              <div id="slickText" className="relative w-1/2 font-sans text-zinc-600">
+                <h4 className="absolute -top-24 text-2xl xl:text-2xl xl:ms-12">From $499.99</h4>
+                <h1 className="absolute -top-12 text-5xl uppercase xl:ms-12">standard apple smartphone</h1>
+                <h3 className="absolute top-12 text-4xl font-light xl:ms-12 2xl:-top-2.5">iPhone 14</h3>
+                <p className="absolute top-24 max-w-md font-light xl:top-24 xl:text-xl xl:ms-12 2xl:top-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero pariatur minima laboriosam.</p>
               </div>
             </div>
           </div>
@@ -140,41 +140,41 @@ const Option1 = () => {
       return (
         <Slider {...settings2}>
           <div>
-            <div className="flex h-screen items-center justify-center gap-8 space-x-24">
-              <div className="relative size-80">
-                <img id="imgRight" className="absolute h-80" src="/iphon16-pro-max.png" />
+            <div className="flex h-screen w-full items-center justify-center gap-8">
+              <div className="imgCarousel1Left relative h-[28rem] w-1/3 xl:h-[32rem] 2xl:h-[36rem]">
+                <img id="imgRight" className="absolute right-0 h-full" src="/iphon16-pro-max.png" />
               </div>
-              <div id="slickText" className="relative w-1/3 font-sans text-zinc-600">
-                <h4 className="absolute -top-20 text-xl">From $1,199.99</h4>
-                <h1 className="absolute -top-12 text-4xl uppercase">new smart phone</h1>
-                <h3 className="absolute -top-2.5 text-3xl font-light">iPhone 16 Pro Max</h3>
-                <p className="absolute top-8 max-w-md font-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero pariatur minima laboriosam.</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="flex h-screen items-center justify-center gap-8 space-x-24">
-              <div id="slickText" className="relative w-1/3 font-sans text-zinc-600 xl:w-2/5">
-                <h4 className="absolute -top-20 text-xl">From $799.99</h4>
-                <h1 className="absolute -top-12 text-4xl uppercase">apple pro smartphone</h1>
-                <h3 className="absolute top-8 text-3xl font-light xl:-top-2.5">iPhone 15 Pro</h3>
-                <p className="absolute top-20 max-w-md font-light xl:top-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero pariatur minima laboriosam.</p>
-              </div>
-              <div className="relative size-80">
-                <img id="imgLeft" className="absolute h-80" src="/iphon15-pro.png" />
+              <div id="slickText" className="relative w-1/2 font-sans text-zinc-600">
+                <h4 className="absolute -top-24 text-2xl xl:text-2xl xl:ms-12">From $1,199.99</h4>
+                <h1 className="absolute -top-12 text-5xl uppercase xl:ms-12">new smart phone</h1>
+                <h3 className="absolute -top-1 text-4xl font-light xl:top-3 xl:ms-12">iPhone 16 Pro Max</h3>
+                <p className="absolute top-10 max-w-md font-light xl:top-14 xl:text-xl xl:ms-12">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero pariatur minima laboriosam.</p>
               </div>
             </div>
           </div>
           <div>
-            <div className="flex h-screen items-center justify-center gap-8 space-x-24">
-              <div className="relative size-80">
-                <img id="imgRight" className="absolute h-80" src="/iphon14.png" />
+            <div className="flex h-screen w-full items-center justify-center gap-8">
+              <div id="slickText" className="relative w-1/2 font-sans text-zinc-600">
+                <h4 className="absolute -top-24 text-2xl xl:text-2xl 2xl:ms-96">From $799.99</h4>
+                <h1 className="absolute -top-12 text-5xl uppercase 2xl:ms-96">apple pro smartphone</h1>
+                <h3 className="absolute top-12 text-4xl font-light xl:top-2 2xl:ms-96">iPhone 15 Pro</h3>
+                <p className="absolute top-24 max-w-md font-light xl:top-14 xl:text-xl 2xl:ms-96">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero pariatur minima laboriosam.</p>
               </div>
-              <div id="slickText" className="relative w-2/5 font-sans text-zinc-600">
-                <h4 className="absolute -top-20 text-xl">From $499.99</h4>
-                <h1 className="absolute -top-12 text-4xl uppercase">standard apple smartphone</h1>
-                <h3 className="absolute top-8 text-3xl font-light 2xl:-top-2.5">iPhone 14</h3>
-                <p className="absolute top-20 max-w-md font-light 2xl:top-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero pariatur minima laboriosam.</p>
+              <div className="imgCarousel1Right relative h-[28rem] w-1/3 xl:h-[32rem] 2xl:h-[36rem]">
+                <img id="imgLeft" className="absolute left-0 h-full" src="/iphon15-pro.png" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="flex h-screen w-full items-center justify-center gap-8">
+              <div className="imgCarousel1Left relative h-[28rem] w-1/3 xl:h-[32rem] 2xl:h-[36rem]">
+                <img id="imgRight" className="absolute right-0 h-full" src="/iphon14.png" />
+              </div>
+              <div id="slickText" className="relative w-1/2 font-sans text-zinc-600">
+                <h4 className="absolute -top-24 text-2xl xl:text-2xl xl:ms-12">From $499.99</h4>
+                <h1 className="absolute -top-12 text-5xl uppercase xl:ms-12">standard apple smartphone</h1>
+                <h3 className="absolute top-12 text-4xl font-light xl:ms-12 2xl:-top-2.5">iPhone 14</h3>
+                <p className="absolute top-24 max-w-md font-light xl:top-24 xl:text-xl xl:ms-12 2xl:top-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero pariatur minima laboriosam.</p>
               </div>
             </div>
           </div>
@@ -185,6 +185,9 @@ const Option1 = () => {
 
   React.useEffect(() => {
     renderCarouselContent();
+    if (!localStorage.getItem("isControlsCarousel")) {
+      localStorage.setItem("isControlsCarousel", JSON.stringify(true));
+    }
   }, []);
 
   return (

@@ -9,9 +9,9 @@ const Option1 = () => {
     const { backgroundNav } = React.useContext(GlobalContext);
 
     return (
-        <MegaMenu id="megaNavbar" className={`${backgroundNav === 0 ? "bg-white" : "bg-transparent"} relative`}>
+        <MegaMenu id="megaNavbar" className={`${backgroundNav === 0 ? "bg-white" : "bg-transparent py-0"} relative`}>
             <div className={`${backgroundNav === 1 ? "absolute" : "hidden"} inset-0 z-10 blur-sm`}></div>
-            <div className="relative z-20 mx-auto flex max-w-5xl flex-wrap items-center justify-between space-x-28 p-4 xl:space-x-32 2xl:max-w-7xl 2xl:space-x-64">
+            <div className={`${backgroundNav === 1 ? "absolute inset-x-4 top-0" : "relative"} z-20 mx-auto flex max-w-5xl flex-wrap items-center justify-between space-x-28 p-4 xl:space-x-32 2xl:max-w-7xl 2xl:space-x-64`}>
                 <Navbar.Brand>
                     <Link to="/" className="flex flex-row">
                         <img src="/Icon-PC-Amazing.ico" className="mr-1 h-16" alt="logo" />
@@ -159,7 +159,7 @@ const Option1 = () => {
                         </div>
                     </Navbar.Link>
                     <Navbar.Link>
-                        <Link to="#">
+                        <Link to="/contact">
                             <span className={`${backgroundNav === 0 ? null : "text-white"}`}>Contact</span>
                         </Link>
                     </Navbar.Link>
