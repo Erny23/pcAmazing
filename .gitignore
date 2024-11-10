@@ -1,0 +1,8 @@
+# Conexión con hosting
+/.vscode
+
+# Variables de entorno
+.env
+
+# Producción
+/dist
