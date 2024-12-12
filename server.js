@@ -34,14 +34,6 @@ if (!isProduction) {
   app.use(base, sirv('./dist/client', { extensions: [] }))
 }
 
-// Middleware
-//app.use(express.static("public")); //Este middleware sirve archivos estáticos desde el publicdirectorio
-app.use(express.json()); // Este middleware analiza los cuerpos de las solicitudes JSON entrantes
-app.use(express.urlencoded({ extended: true })); // Este middleware analiza los cuerpos de las solicitudes entrantes codificadas en URL
-app.get("/api", (req, res) => {
-    res.json({ message: "Hello World" }); // Esto define una ruta GET para el /apipunto final
-});
-
 // Serve HTML
 app.use('*all', async (req, res) => {
   try {
