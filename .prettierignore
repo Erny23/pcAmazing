@@ -1,0 +1,10 @@
+# Ignore artifacts:
+tests/fixtures
+.github/
+.git/
+.gitignore
+.vscode/
+node_modules/
+dist/
+public/
+README.md
