@@ -95,7 +95,7 @@ const Home = () => {
           </div>
         </div>
         {/* columna derecha */}
-        <div className={`${style.column} ps-8`}>
+        <div className={`${style.column} ps-6`}>
           <h2 className="my-5">Top categorías</h2>
           <ul className={`${style.topCategories} flex flex-wrap gap-3`}>
             <li>
