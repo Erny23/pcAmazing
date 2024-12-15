@@ -9,36 +9,56 @@ const Home = () => {
           <h2 className="text-lg font-semibold text-zinc-800">Más vendidos</h2>
           <br />
           <ul className="flex flex-col gap-4">
-            <li className="flex w-full flex-row items-center gap-3 border-2">
-              <div className="size-14 bg-zinc-500"></div>
-              <div className="leading-3">
-                <h3>titulo</h3>
-                <sub>subTitulo</sub>
-              </div>
+            <li className="w-full border-2 transition-all duration-100 hover:ms-5 hover:bg-cyan-500 hover:text-white">
+              <Link to="/" className="flex flex-row items-center gap-3">
+                <div className="size-14">
+                  <img src={ui.img.graphicCard} alt="graphicCard" />
+                </div>
+                <div className="leading-3">
+                  <h3 className="text-[0.9rem]">Nvidia RTX 4090</h3>
+                  <sub>Tarjeta gráfica</sub>
+                </div>
+              </Link>
             </li>
-            <li className="flex w-full flex-row items-center gap-3 border-2">
-              <div className="size-14 bg-zinc-500"></div>
-              <div className="leading-3">
-                <h3>titulo</h3>
-                <sub>subTitulo</sub>
-              </div>
+            <li className="w-full border-2 transition-all duration-100 hover:ms-5 hover:bg-cyan-500 hover:text-white">
+              <Link to="/" className="flex flex-row items-center gap-3">
+                <div className="size-14">
+                  <img src={ui.img.monitor} alt="monitor" />
+                </div>
+                <div className="leading-3">
+                  <h3 className="text-[0.9rem]">ASUS 32" 75Hz</h3>
+                  <sub>Monitor LED</sub>
+                </div>
+              </Link>
             </li>
-            <li className="flex w-full flex-row items-center gap-3 border-2">
-              <div className="size-14 bg-zinc-500"></div>
-              <div className="leading-3">
-                <h3>titulo</h3>
-                <sub>subTitulo</sub>
-              </div>
+            <li className="w-full border-2 transition-all duration-100 hover:ms-5 hover:bg-cyan-500 hover:text-white">
+              <Link to="/" className="flex flex-row items-center gap-3">
+                <div className="size-14">
+                  <img src={ui.img.ssd} alt="memoria" />
+                </div>
+                <div className="leading-3">
+                  <h3 className="text-[0.9rem]">SSD m.2</h3>
+                  <sub>2Tb</sub>
+                </div>
+              </Link>
             </li>
           </ul>
           <br />
-          <div className="h-64 w-full bg-zinc-500"></div>
+          <div className="w-full">
+            <img src={ui.img.banner4} alt="banner-4" />
+          </div>
         </div>
         <div className="flex w-2/3 max-w-3xl flex-col items-center px-6 pt-4">
-          <div className="h-56 w-full bg-zinc-500"></div>
+          <div className="w-full">
+            <img src={ui.img.banner1} alt="banner-1" />
+          </div>
           <div className="mt-4 flex h-32 w-full flex-row justify-center gap-4">
-            <div className="w-1/2 bg-zinc-500"></div>
-            <div className="w-1/2 bg-zinc-500"></div>
+            <div className="w-1/2">
+              <img className="" src={ui.img.banner2} alt="banner-2" />
+            </div>
+            <div className="w-1/2">
+              <img className="" src={ui.img.banner3} alt="banner-3" />
+            </div>
           </div>
           <div className="mt-4 flex flex-row justify-center gap-4">
             <div className="flex w-1/2 flex-row items-center justify-center gap-2 bg-zinc-800 p-1.5">
