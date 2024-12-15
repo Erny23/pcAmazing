@@ -55,7 +55,7 @@ const Home = () => {
         >
           <div>
             <img
-              className="3xl:h-[22rem] w-full"
+              className="w-full 3xl:h-[22rem]"
               src={ui.img.banner1}
               alt="banner-1"
             />
@@ -135,7 +135,7 @@ const Home = () => {
                 type="text"
                 placeholder="email"
               />
-              <button className="bg-base hover:bg-active flex h-full w-12 items-center justify-center text-white">
+              <button className="flex h-full w-12 items-center justify-center bg-base text-white hover:bg-active">
                 <ui.icon.FaArrowRight className="size-6" />
               </button>
             </div>
@@ -151,11 +151,26 @@ const Home = () => {
           </form>
         </div>
       </section>
+      <br />
+      <section className="mt-8 flex w-full flex-col items-center">
+        <h1 className="text-4xl font-bold underline decoration-base underline-offset-4">
+          Compra por marca
+        </h1>
+        <div className="container mx-auto my-12 w-full max-w-[115rem] px-8">
+          <ui.carousel />
+        </div>
+      </section>
+      <section className="flex w-full cursor-default flex-row items-center justify-center gap-x-2 bg-zinc-400 text-white">
+        <ui.icon.TbTruckDelivery className="size-8" />
+        <h3 className="py-2.5 font-semibold">
+          Envío gratis por compra a partir de 50$
+        </h3>
+      </section>
       <section className="flex h-screen flex-row items-center justify-center">
         <img src="/Icon-PC-Amazing.ico" className="size-48" alt="React logo" />
         <h1 className="text-center font-semibold text-white">
           <span className="text-violet-800">PC</span>
-          <span className="ms-3 text-cyan-600">AMAZING</span>
+          <span className="ms-3 text-active">AMAZING</span>
         </h1>
       </section>
     </>

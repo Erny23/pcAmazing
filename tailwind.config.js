@@ -59,6 +59,9 @@ export default {
       sky: {
         600: "#0284c7",
       },
+      violet: {
+        800: "#5b21b6",
+      },
     },
     extend: {},
   },

@@ -14,7 +14,7 @@ const Header = () => {
             <img src={ui.icon.pcamazing} className="size-14" alt="logo" />
             <h1 className="text-center text-3xl font-bold text-white">
               <span className="text-white">PC</span>
-              <span className="ms-3 text-cyan-600">Amazing</span>
+              <span className="ms-3 text-active">Amazing</span>
             </h1>
           </Link>
         </div>
@@ -141,7 +141,7 @@ const Header = () => {
               <ui.icon.IoIosArrowDown className="ms-1 size-4 text-white" />
               <div className={`${style.tooltip}`}>
                 <div className={`${style.tooltipContent}`}>
-                  <section className="3xl:px-96 flex flex-wrap gap-3 2xl:px-56">
+                  <section className="flex flex-wrap gap-3 2xl:px-56 3xl:px-96">
                     <div className="m-2 flex flex-row gap-4">
                       <div className="size-32">
                         <img
