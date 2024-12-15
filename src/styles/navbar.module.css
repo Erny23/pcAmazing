@@ -69,6 +69,8 @@ li.navBtn svg {
 }
 
 li.navBtn h3 {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
   cursor: pointer;
 }
 
@@ -76,7 +78,7 @@ li.navBtn h3 {
 .tooltip {
   position: absolute;
   inset: -2rem;
-  top: 10rem;
+  top: 11rem;
   display: none;
   flex-direction: column;
   align-items: center;

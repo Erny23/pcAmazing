@@ -66,7 +66,7 @@ const Header = () => {
       {/* part 2 */}
       <section className={`${style.navbar}`}>
         {/* departments */}
-        <div className="w-1/3 xl:w-1/4">
+        <div className="flex w-1/3 items-end xl:w-1/4">
           <button
             className={`${style.button} flex flex-row rounded-t-xl px-6 py-3`}
           >
@@ -75,7 +75,7 @@ const Header = () => {
           </button>
         </div>
         {/* nav buttons */}
-        <div className="w-1/2">
+        <div className="flex w-1/2 items-end">
           <ul className="flex list-none flex-row gap-0.5 xl:gap-8">
             <li className={`${style.navBtn}`}>
               <Link to="/">
