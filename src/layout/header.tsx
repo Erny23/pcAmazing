@@ -1,20 +1,17 @@
 "use client";
 import { Link } from "react-router-dom";
 import * as ui from "../ui/index";
+import style from "../styles/navbar.module.css";
 
 const Header = () => {
   return (
     <nav className="relative flex-col items-center bg-neutral-800 p-8 pb-0 2xl:flex">
       {/* part 1 */}
-      <section className="flex flex-row gap-8 2xl:w-[80rem]">
+      <section className={`${style.navbar} gap-8`}>
         {/* brand */}
         <div className="w-1/4 2xl:w-1/3">
-          <Link to="/" className="flex cursor-pointer flex-row items-center">
-            <img
-              src="/Icon-PC-Amazing.ico"
-              className="size-14"
-              alt="React logo"
-            />
+          <Link to="/" className="flex flex-row items-center">
+            <img src={ui.icon.pcamazing} className="size-14" alt="logo" />
             <h1 className="text-center text-3xl font-bold text-white">
               <span className="text-white">PC</span>
               <span className="ms-3 text-cyan-600">Amazing</span>
@@ -26,7 +23,7 @@ const Header = () => {
           <select
             name="category"
             id=""
-            className="h-full cursor-pointer rounded-s-lg bg-cyan-600 ps-1 font-semibold text-white hover:bg-cyan-500"
+            className={`${style.button} h-full rounded-s-lg ps-1 font-semibold`}
           >
             <option className="bg-white text-black" value="all">
               Todas
@@ -45,32 +42,34 @@ const Header = () => {
             type="text"
             placeholder="Buscar..."
           />
-          <button className="h-full cursor-pointer rounded-e-lg bg-cyan-600 p-1 px-2 text-white hover:bg-cyan-500">
+          <button className={`${style.button} h-full rounded-e-lg p-1 px-2`}>
             <ui.icon.FaSearch className="size-5" />
           </button>
         </div>
         {/* user, favorites, compare */}
         <div className="flex w-1/4 flex-row gap-4 2xl:w-1/3">
-          <button className="flex cursor-pointer flex-col items-center rounded-md p-1.5 text-white hover:bg-zinc-700">
-            <ui.icon.FaUserCircle className="size-6" />
+          <button className={`${style.panel}`}>
+            <ui.icon.FaUserCircle />
             <h3>Usuario</h3>
           </button>
-          <button className="flex cursor-pointer flex-col items-center rounded-md p-1.5 text-white hover:bg-zinc-700">
-            <ui.icon.BiSolidHeartCircle className="size-6" />
+          <button className={`${style.panel}`}>
+            <ui.icon.BiSolidHeartCircle />
             <h3>Deseados</h3>
           </button>
-          <button className="flex cursor-pointer flex-col items-center rounded-md p-1.5 text-white hover:bg-zinc-700">
-            <ui.icon.BiTransferAlt className="size-6" />
+          <button className={`${style.panel}`}>
+            <ui.icon.BiTransferAlt />
             <h3>Comparar</h3>
           </button>
         </div>
       </section>
       <br />
       {/* part 2 */}
-      <section className="flex flex-row 2xl:w-[80rem]">
+      <section className={`${style.navbar}`}>
         {/* departments */}
         <div className="w-1/3 xl:w-1/4">
-          <button className="flex cursor-pointer flex-row rounded-t-xl bg-cyan-600 px-6 py-3 hover:bg-cyan-500">
+          <button
+            className={`${style.button} flex flex-row rounded-t-xl px-6 py-3`}
+          >
             <ui.icon.IoMenu className="size-6 pe-1" />
             <span className="font-semibold">Todos los departamentos</span>
           </button>
@@ -78,72 +77,76 @@ const Header = () => {
         {/* nav buttons */}
         <div className="w-1/2">
           <ul className="flex list-none flex-row gap-0.5 xl:gap-8">
-            <li className="flex cursor-pointer flex-row items-center rounded-t-lg px-2 py-3 hover:bg-zinc-700">
-              <span className="relative me-1 size-4 rounded-full bg-white">
-                <ui.icon.BiSolidOffer className="absolute -left-1 -top-1 size-6 text-red-500" />
-              </span>
-              <h3>Especiales</h3>
+            <li className={`${style.navBtn}`}>
+              <Link to="/">
+                <span className="relative me-1 size-4 rounded-full bg-white">
+                  <ui.icon.BiSolidOffer className="absolute -left-1 -top-1 size-6 text-red-500" />
+                </span>
+                <h3>Especiales</h3>
+              </Link>
             </li>
-            <li className="group flex flex-row items-center rounded-t-lg px-2 py-3 hover:bg-zinc-700">
-              <ui.icon.BiSolidCube className="me-0.5 size-5 cursor-pointer text-white" />
-              <h3 className="cursor-pointer">Marcas</h3>
-              <ui.icon.IoIosArrowDown className="ms-1 size-4 cursor-pointer text-white" />
-              <div className="absolute -inset-8 top-40 hidden flex-col items-center group-hover:flex 2xl:-left-32 2xl:-right-32">
-                <div className="whitespace-no-wrap relative z-10 w-full bg-white px-8 py-4 text-xs leading-none text-black shadow-lg">
+            <li className={`${style.navBtn}`}>
+              <ui.icon.BiSolidCube className="me-0.5 size-5 text-white" />
+              <h3>Marcas</h3>
+              <ui.icon.IoIosArrowDown className="ms-1 size-4 text-white" />
+              <div className={`${style.tooltip}`}>
+                <div className={`${style.tooltipContent}`}>
                   <h2 className="flex w-full justify-center text-lg font-semibold underline">
                     Marcas destacadas
                   </h2>
                   <br />
-                  <ul className="ms-2 mt-1 flex flex-wrap justify-center gap-4 text-base">
-                    <li className="mt-1 cursor-pointer text-gray-600 hover:text-black">
-                      AMD
+                  <ul
+                    className={`${style.brand} ms-2 mt-1 flex flex-wrap justify-center gap-4 text-base`}
+                  >
+                    <li>
+                      <Link to="/">AMD</Link>
                     </li>
-                    <li className="mt-1 cursor-pointer text-gray-600 hover:text-black">
-                      Nvidia
+                    <li>
+                      <Link to="/">Nvidia</Link>
                     </li>
-                    <li className="mt-1 cursor-pointer text-gray-600 hover:text-black">
-                      ASUS
+                    <li>
+                      <Link to="/">ASUS</Link>
                     </li>
-                    <li className="mt-1 cursor-pointer text-gray-600 hover:text-black">
-                      Gygabite
+                    <li>
+                      <Link to="/">Gygabite</Link>
                     </li>
-                    <li className="mt-1 cursor-pointer text-gray-600 hover:text-black">
-                      Corsair
+                    <li>
+                      <Link to="/">Corsair</Link>
                     </li>
-                    <li className="mt-1 cursor-pointer text-gray-600 hover:text-black">
-                      HP
+                    <li>
+                      <Link to="/">HP</Link>
                     </li>
-                    <li className="mt-1 cursor-pointer text-gray-600 hover:text-black">
-                      DELL
+                    <li>
+                      <Link to="/">DELL</Link>
                     </li>
-                    <li className="mt-1 cursor-pointer text-gray-600 hover:text-black">
-                      MSI
+                    <li>
+                      <Link to="/">MSI</Link>
                     </li>
-                    <li className="mt-1 cursor-pointer text-gray-600 hover:text-black">
-                      Samsung
+                    <li>
+                      <Link to="/">Samsung</Link>
                     </li>
-                    <li className="mt-1 cursor-pointer text-gray-600 hover:text-black">
-                      Apple
+                    <li>
+                      <Link to="/">Apple</Link>
                     </li>
-                    <li className="mt-1 cursor-pointer text-sky-600 underline">
-                      Ver más
+                    <li>
+                      <Link to="/">Ver más</Link>
                     </li>
                   </ul>
                 </div>
               </div>
             </li>
-            <li className="group flex flex-row items-center rounded-t-lg px-2 py-3 hover:bg-zinc-700">
-              <ui.icon.BsPcDisplay className="me-0.5 size-4 cursor-pointer text-white" />
-              <h3 className="cursor-pointer">PC</h3>
-              <ui.icon.IoIosArrowDown className="ms-1 size-4 cursor-pointer text-white" />
-              <div className="absolute -inset-8 top-40 hidden flex-col items-center group-hover:flex 2xl:-left-32 2xl:-right-32">
-                <div className="whitespace-no-wrap relative z-10 w-full bg-white px-8 py-4 text-xs leading-none text-black shadow-lg">
+            <li className={`${style.navBtn}`}>
+              <ui.icon.BsPcDisplay className="me-0.5 size-4 text-white" />
+              <h3>PC</h3>
+              <ui.icon.IoIosArrowDown className="ms-1 size-4 text-white" />
+              <div className={`${style.tooltip}`}>
+                <div className={`${style.tooltipContent}`}>
                   <section className="3xl:px-96 flex flex-wrap gap-3 2xl:px-56">
                     <div className="m-2 flex flex-row gap-4">
                       <div className="size-32">
                         <img
                           className="size-full"
-                          src="/graphicCard.jpg"
+                          src={ui.img.graphicCard}
                           alt="graphicCard"
                         />
                       </div>
@@ -151,13 +154,21 @@ const Header = () => {
                         <h2 className="text-lg font-semibold underline">
                           Tarjetas gráficas
                         </h2>
-                        <ul className="ms-2 mt-1 list-inside text-base">
-                          <li className="mt-1">Nvidia GTX</li>
-                          <li className="mt-1">Nvidia RTX</li>
-                          <li className="mt-1">AMD Radeon</li>
-                          <li className="mt-1">AMD Radeon XT</li>
-                          <li className="mt-1 cursor-pointer text-sky-600 underline">
-                            Ver más
+                        <ul className={`${style.pc}`}>
+                          <li>
+                            <Link to="/">Nvidia GTX</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Nvidia RTX</Link>
+                          </li>
+                          <li>
+                            <Link to="/">AMD Radeon</Link>
+                          </li>
+                          <li>
+                            <Link to="/">AMD Radeon XT</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Ver más</Link>
                           </li>
                         </ul>
                       </div>
@@ -166,7 +177,7 @@ const Header = () => {
                       <div className="size-32">
                         <img
                           className="size-full"
-                          src="/processor.jpg"
+                          src={ui.img.amdProcessor}
                           alt="processorAmd"
                         />
                       </div>
@@ -174,13 +185,21 @@ const Header = () => {
                         <h2 className="text-lg font-semibold underline">
                           Procesadores AMD
                         </h2>
-                        <ul className="ms-2 mt-1 list-inside text-base">
-                          <li className="mt-1">Ryzen 3</li>
-                          <li className="mt-1">Ryzen 5</li>
-                          <li className="mt-1">Ryzen 7</li>
-                          <li className="mt-1">Ryzen 9</li>
-                          <li className="mt-1 cursor-pointer text-sky-600 underline">
-                            Ver más
+                        <ul className={`${style.pc}`}>
+                          <li>
+                            <Link to="/">Ryzen 3</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Ryzen 5</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Ryzen 7</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Ryzen 9</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Ver más</Link>
                           </li>
                         </ul>
                       </div>
@@ -189,7 +208,7 @@ const Header = () => {
                       <div className="size-32">
                         <img
                           className="size-full"
-                          src="/processor-2.jpg"
+                          src={ui.img.intelProcessor}
                           alt="processorIntel"
                         />
                       </div>
@@ -197,13 +216,21 @@ const Header = () => {
                         <h2 className="text-lg font-semibold underline">
                           Procesadores Intel
                         </h2>
-                        <ul className="ms-2 mt-1 list-inside text-base">
-                          <li className="mt-1">Intel Core i3</li>
-                          <li className="mt-1">Intel Core i5</li>
-                          <li className="mt-1">Intel Core i7</li>
-                          <li className="mt-1">Intel Core i9</li>
-                          <li className="mt-1 cursor-pointer text-sky-600 underline">
-                            Ver más
+                        <ul className={`${style.pc}`}>
+                          <li>
+                            <Link to="/">Intel Core i3</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Intel Core i5</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Intel Core i7</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Intel Core i9</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Ver más</Link>
                           </li>
                         </ul>
                       </div>
@@ -212,7 +239,7 @@ const Header = () => {
                       <div className="size-32">
                         <img
                           className="size-full"
-                          src="/motherboard.webp"
+                          src={ui.img.motherboard}
                           alt="motheboard"
                         />
                       </div>
@@ -220,32 +247,48 @@ const Header = () => {
                         <h2 className="text-lg font-semibold underline">
                           Tarjetas madre
                         </h2>
-                        <ul className="ms-2 mt-1 list-inside text-base">
-                          <li className="mt-1">E-ATX</li>
-                          <li className="mt-1">ATX</li>
-                          <li className="mt-1">Mini-ATX</li>
-                          <li className="mt-1">Micro-ATX</li>
-                          <li className="mt-1 cursor-pointer text-sky-600 underline">
-                            Ver más
+                        <ul className={`${style.pc}`}>
+                          <li>
+                            <Link to="/">E-ATX</Link>
+                          </li>
+                          <li>
+                            <Link to="/">ATX</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Mini-ATX</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Micro-ATX</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Ver más</Link>
                           </li>
                         </ul>
                       </div>
                     </div>
                     <div className="m-2 flex flex-row gap-4">
                       <div className="size-32">
-                        <img className="size-full" src="/ssd.jpg" alt="ssd" />
+                        <img className="size-full" src={ui.img.ssd} alt="ssd" />
                       </div>
                       <div className="text-start">
                         <h2 className="text-lg font-semibold underline">
                           Solid State Drive (SSD)
                         </h2>
-                        <ul className="ms-2 mt-1 list-inside text-base">
-                          <li className="mt-1">80Gb a 120Gb</li>
-                          <li className="mt-1">320Gb a 500Gb</li>
-                          <li className="mt-1">1Tb a 2Tb</li>
-                          <li className="mt-1">3Tb a 4Tb</li>
-                          <li className="mt-1 cursor-pointer text-sky-600 underline">
-                            Ver más
+                        <ul className={`${style.pc}`}>
+                          <li>
+                            <Link to="/">80Gb a 120Gb</Link>
+                          </li>
+                          <li>
+                            <Link to="/">320Gb a 500Gb</Link>
+                          </li>
+                          <li>
+                            <Link to="/">1Tb a 2Tb</Link>
+                          </li>
+                          <li>
+                            <Link to="/">3Tb a 4Tb</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Ver más</Link>
                           </li>
                         </ul>
                       </div>
@@ -254,7 +297,7 @@ const Header = () => {
                       <div className="size-32">
                         <img
                           className="size-full"
-                          src="/monitor.jpg"
+                          src={ui.img.monitor}
                           alt="monitor"
                         />
                       </div>
@@ -262,13 +305,21 @@ const Header = () => {
                         <h2 className="text-lg font-semibold underline">
                           Monitores
                         </h2>
-                        <ul className="ms-2 mt-1 list-inside text-base">
-                          <li className="mt-1">1280p x 1024p</li>
-                          <li className="mt-1">1366p x 768p</li>
-                          <li className="mt-1">1440p x 900p</li>
-                          <li className="mt-1">1600p x 1200p</li>
-                          <li className="mt-1 cursor-pointer text-sky-600 underline">
-                            Ver más
+                        <ul className={`${style.pc}`}>
+                          <li>
+                            <Link to="/">1280p x 1024p</Link>
+                          </li>
+                          <li>
+                            <Link to="/">1366p x 768p</Link>
+                          </li>
+                          <li>
+                            <Link to="/">1440p x 900p</Link>
+                          </li>
+                          <li>
+                            <Link to="/">1600p x 1200p</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Ver más</Link>
                           </li>
                         </ul>
                       </div>
@@ -277,7 +328,7 @@ const Header = () => {
                       <div className="size-32">
                         <img
                           className="size-full"
-                          src="/powerSupply.jpg"
+                          src={ui.img.powerSupply}
                           alt="powerSupply"
                         />
                       </div>
@@ -285,13 +336,21 @@ const Header = () => {
                         <h2 className="text-lg font-semibold underline">
                           Fuente de poder
                         </h2>
-                        <ul className="ms-2 mt-1 list-inside text-base">
-                          <li className="mt-1">80 plus</li>
-                          <li className="mt-1">80 plus Bronze</li>
-                          <li className="mt-1">80 plus Silver</li>
-                          <li className="mt-1">80 plus Gold</li>
-                          <li className="mt-1 cursor-pointer text-sky-600 underline">
-                            Ver más
+                        <ul className={`${style.pc}`}>
+                          <li>
+                            <Link to="/">80 plus</Link>
+                          </li>
+                          <li>
+                            <Link to="/">80 plus Bronze</Link>
+                          </li>
+                          <li>
+                            <Link to="/">80 plus Silver</Link>
+                          </li>
+                          <li>
+                            <Link to="/">80 plus Gold</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Ver más</Link>
                           </li>
                         </ul>
                       </div>
@@ -300,7 +359,7 @@ const Header = () => {
                       <div className="size-32">
                         <img
                           className="size-full"
-                          src="/keyboard.jpg"
+                          src={ui.img.keyboard}
                           alt="keyboard"
                         />
                       </div>
@@ -308,13 +367,21 @@ const Header = () => {
                         <h2 className="text-lg font-semibold underline">
                           Periféricos
                         </h2>
-                        <ul className="ms-2 mt-1 list-inside text-base">
-                          <li className="mt-1">Teclados</li>
-                          <li className="mt-1">Mouse</li>
-                          <li className="mt-1">Alfombrillas</li>
-                          <li className="mt-1">Ventiladores</li>
-                          <li className="mt-1 cursor-pointer text-sky-600 underline">
-                            Ver más
+                        <ul className={`${style.pc}`}>
+                          <li>
+                            <Link to="/">Teclados</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Mouse</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Alfombrillas</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Ventiladores</Link>
+                          </li>
+                          <li>
+                            <Link to="/">Ver más</Link>
                           </li>
                         </ul>
                       </div>
@@ -323,18 +390,18 @@ const Header = () => {
                 </div>
               </div>
             </li>
-            <li className="group flex flex-row items-center rounded-t-lg px-2 py-3 hover:bg-zinc-700">
-              <ui.icon.FaMobileScreenButton className="me-0.5 size-4 cursor-pointer text-white" />
-              <h3 className="cursor-pointer">Teléfonos</h3>
-              <ui.icon.IoIosArrowDown className="ms-1 size-4 cursor-pointer text-white" />
-              <div className="absolute -inset-8 top-40 hidden flex-col items-center group-hover:flex 2xl:-left-32 2xl:-right-32">
-                <div className="whitespace-no-wrap relative z-10 w-full bg-white px-8 py-4 text-xs leading-none text-black shadow-lg">
+            <li className={`${style.navBtn}`}>
+              <ui.icon.FaMobileScreenButton className="me-0.5 size-4 text-white" />
+              <h3>Teléfonos</h3>
+              <ui.icon.IoIosArrowDown className="ms-1 size-4 text-white" />
+              <div className={`${style.tooltip}`}>
+                <div className={`${style.tooltipContent}`}>
                   <section className="flex flex-wrap justify-center gap-3">
                     <div className="flex flex-col gap-4 rounded-md p-3 hover:bg-zinc-100">
                       <div className="size-36">
                         <img
                           className="size-full"
-                          src="/iphone.jpg"
+                          src={ui.img.iphone}
                           alt="iphone"
                         />
                       </div>
@@ -346,7 +413,7 @@ const Header = () => {
                       <div className="size-36">
                         <img
                           className="size-full"
-                          src="/samsung.webp"
+                          src={ui.img.samsung}
                           alt="samsung"
                         />
                       </div>
@@ -358,7 +425,7 @@ const Header = () => {
                       <div className="size-36">
                         <img
                           className="size-full"
-                          src="/earphones.jpg"
+                          src={ui.img.earphones}
                           alt="earphones"
                         />
                       </div>
@@ -370,7 +437,7 @@ const Header = () => {
                       <div className="size-36">
                         <img
                           className="size-full"
-                          src="/charger.jpg"
+                          src={ui.img.chargers}
                           alt="charger"
                         />
                       </div>
@@ -382,7 +449,7 @@ const Header = () => {
                       <div className="size-36">
                         <img
                           className="size-full"
-                          src="/phoneCase.jpg"
+                          src={ui.img.phoneCases}
                           alt="phoneCase"
                         />
                       </div>
@@ -394,7 +461,7 @@ const Header = () => {
                       <div className="size-36">
                         <img
                           className="size-full"
-                          src="/powerBank.jpg"
+                          src={ui.img.powerBanks}
                           alt="powerBank"
                         />
                       </div>
@@ -406,7 +473,7 @@ const Header = () => {
                       <div className="size-36">
                         <img
                           className="size-full"
-                          src="/phoneAccessories.jpg"
+                          src={ui.img.phoneAccessories}
                           alt="phoneAccessories"
                         />
                       </div>
@@ -418,15 +485,19 @@ const Header = () => {
                 </div>
               </div>
             </li>
-            <li className="flex cursor-pointer flex-row items-center rounded-t-lg px-2 py-3 hover:bg-zinc-700">
-              <ui.icon.TfiMoreAlt className="me-1 size-6 text-white" />
-              <h3>Otros</h3>
+            <li className={`${style.navBtn}`}>
+              <Link to="/">
+                <ui.icon.TfiMoreAlt className="me-1 size-6 text-white" />
+                <h3>Otros</h3>
+              </Link>
             </li>
           </ul>
         </div>
         {/* cart */}
         <div className="group flex w-1/4 justify-end xl:w-1/5 2xl:w-1/6">
-          <button className="flex cursor-pointer flex-row rounded-t-xl bg-cyan-600 px-6 py-3 hover:bg-cyan-500 focus:outline-none">
+          <button
+            className={`${style.button} flex flex-row rounded-t-xl px-6 py-3 focus:outline-none`}
+          >
             <ui.icon.IoCartSharp className="size-7 pe-1" />
             <span className="font-semibold">Carrito</span>
           </button>
@@ -457,7 +528,9 @@ const Header = () => {
                 <button className="rounded-md bg-zinc-400 p-2 font-semibold hover:bg-zinc-500">
                   Ver listado
                 </button>
-                <button className="rounded-md bg-cyan-600 p-2 font-semibold hover:bg-cyan-500">
+                <button
+                  className={`${style.button} rounded-md p-2 font-semibold`}
+                >
                   Comprar
                 </button>
               </div>

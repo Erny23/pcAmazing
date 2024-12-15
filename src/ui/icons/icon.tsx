@@ -1,3 +1,4 @@
+import pcamazing from "../../assets/Icon-PC-Amazing.ico";
 import {
   FaUserCircle, // usuario
   FaSearch, // lupa
@@ -19,6 +20,7 @@ import { TfiMoreAlt } from "react-icons/tfi"; // otros
 import { IoIosArrowDown } from "react-icons/io"; // flecha hacia abajo
 
 const icons = {
+  pcamazing,
   FaUserCircle,
   FaSearch,
   BiSolidBookmark,
