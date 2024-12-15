@@ -2,6 +2,8 @@ import pcamazing from "../../assets/Icon-PC-Amazing.ico";
 import {
   FaUserCircle, // usuario
   FaSearch, // lupa
+  FaCcMastercard, // tarjeta
+  FaKeyboard, // teclado
 } from "react-icons/fa";
 import {
   BiSolidBookmark, // marcador
@@ -14,15 +16,27 @@ import {
   IoMenu, // barras de menú
   IoCartSharp, // carrito
 } from "react-icons/io5";
-import { BsPcDisplay } from "react-icons/bs"; // pc
-import { FaMobileScreenButton, FaCircle } from "react-icons/fa6"; // teléfono
+import {
+  BsPcDisplay, // pc
+  BsFillSdCardFill, // memoria
+} from "react-icons/bs"; // pc
+import {
+  FaMobileScreenButton, // telefono
+  FaCircle, // circulo
+  FaShop, // tienda
+  FaArrowRight, // flecha derecha
+} from "react-icons/fa6"; // teléfono
 import { TfiMoreAlt } from "react-icons/tfi"; // otros
 import { IoIosArrowDown } from "react-icons/io"; // flecha hacia abajo
+import { TbTruckDelivery } from "react-icons/tb";
+import { SlScreenDesktop } from "react-icons/sl"; // monitor
 
 const icons = {
   pcamazing,
   FaUserCircle,
   FaSearch,
+  FaCcMastercard,
+  FaKeyboard,
   BiSolidBookmark,
   BiSolidHeartCircle,
   BiSolidOffer,
@@ -32,9 +46,14 @@ const icons = {
   IoCartSharp,
   IoIosArrowDown,
   BsPcDisplay,
+  BsFillSdCardFill,
   FaMobileScreenButton,
   FaCircle,
+  FaShop,
+  FaArrowRight,
   TfiMoreAlt,
+  TbTruckDelivery,
+  SlScreenDesktop,
 };
 
 export default icons;
