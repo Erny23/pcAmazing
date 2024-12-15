@@ -15,7 +15,7 @@ import {
   IoCartSharp, // carrito
 } from "react-icons/io5";
 import { BsPcDisplay } from "react-icons/bs"; // pc
-import { FaMobileScreenButton } from "react-icons/fa6"; // teléfono
+import { FaMobileScreenButton, FaCircle } from "react-icons/fa6"; // teléfono
 import { TfiMoreAlt } from "react-icons/tfi"; // otros
 import { IoIosArrowDown } from "react-icons/io"; // flecha hacia abajo
 
@@ -33,6 +33,7 @@ const icons = {
   IoIosArrowDown,
   BsPcDisplay,
   FaMobileScreenButton,
+  FaCircle,
   TfiMoreAlt,
 };
 

@@ -494,14 +494,16 @@ const Header = () => {
           </ul>
         </div>
         {/* cart */}
-        <div className="group flex w-1/4 justify-end xl:w-1/5 2xl:w-1/6">
+        <div className="group relative flex w-1/4 justify-end xl:w-1/5 2xl:w-1/6">
           <button
             className={`${style.button} flex flex-row rounded-t-xl px-6 py-3 focus:outline-none`}
           >
             <ui.icon.IoCartSharp className="size-7 pe-1" />
             <span className="font-semibold">Carrito</span>
           </button>
-          <div className="absolute top-48 z-10 hidden w-56 list-none flex-col gap-3 divide-y-2 rounded-lg bg-gray-50 p-3 text-black shadow-lg group-focus-within:flex">
+          <div
+            className={`${style.cart} absolute top-20 z-10 hidden w-56 list-none flex-col gap-3 divide-y-2 rounded-lg bg-gray-50 p-3 text-black shadow-lg group-focus-within:flex`}
+          >
             <ul className="flex flex-col gap-2">
               <li className="flex w-full flex-row border-2 border-black text-start leading-3">
                 <div className="size-12 bg-zinc-700"></div>
@@ -537,6 +539,49 @@ const Header = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section className="flex flex-row text-white">
+        <div className="absolute left-0 right-0 z-0 h-9 bg-zinc-500"></div>
+        <ul
+          className={`${style.quickLinks} relative z-10 flex w-full flex-row items-center justify-center gap-16 py-1.5`}
+        >
+          <li>
+            <Link to="/">
+              <ui.icon.FaCircle />
+              <h3>iPhone's</h3>
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
+              <ui.icon.FaCircle />
+              <h3>Tarjetas gráficas</h3>
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
+              <ui.icon.FaCircle />
+              <h3>Monitores</h3>
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
+              <ui.icon.FaCircle />
+              <h3>Periféricos</h3>
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
+              <ui.icon.FaCircle />
+              <h3>Teclados</h3>
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
+              <ui.icon.FaCircle />
+              <h3>SSD</h3>
+            </Link>
+          </li>
+        </ul>
       </section>
     </nav>
   );

@@ -78,10 +78,11 @@ li.navBtn h3 {
 .tooltip {
   position: absolute;
   inset: -2rem;
-  top: 11rem;
+  top: 10.5rem;
   display: none;
   flex-direction: column;
   align-items: center;
+  z-index: 20;
 }
 
 li.navBtn:hover .tooltip {
@@ -144,6 +145,36 @@ ul.pc li {
   margin-top: 0.25rem;
   font-size: 1rem;
   line-height: 1rem;
+}
+
+/* carrito */
+.cart::before {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  top: -0.9rem;
+  left: 50%;
+  rotate: 45deg;
+  z-index: -10;
+}
+
+/* enlaces rápidos */
+ul.quickLinks li a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+ul.quickLinks li a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(6 182 212 / var(--tw-text-opacity, 1));
+}
+
+ul.quickLinks li a svg {
+  margin-right: 0.3rem;
 }
 
 ul.pc li a {
