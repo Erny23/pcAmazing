@@ -1,8 +1,255 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import * as ui from "../../ui/index";
 import style from "../../styles/home.module.css";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
 
 const Home = () => {
+  const [tag, setTag] = React.useState("recent");
+  const [category, setCategory] = React.useState<string | null>(null);
+
+  const tagList = {
+    recent: "recent",
+    ranked: "top-ranked",
+    bests: "best-seller",
+    special: "special",
+  };
+
+  const catList = {
+    monitor: "monitor",
+    proccessor: "proccessor",
+    graphiCard: "graphi-card",
+    ram: "ram",
+    ssd: "ssd",
+    powerSupply: "power-supply",
+    phone: "phone",
+    case: "case",
+    phoneAccessories: "phone-accessories",
+    accessories: "accessories",
+  };
+
+  const tags = [
+    {
+      id: 0,
+      name: "Recientes",
+      value: "recent",
+    },
+    {
+      id: 1,
+      name: "Mejor calificados",
+      value: "top-ranked",
+    },
+    {
+      id: 2,
+      name: "Más vendidos",
+      value: "best-seller",
+    },
+    {
+      id: 2,
+      name: "Especiales",
+      value: "special",
+    },
+  ];
+
+  const filters = [
+    {
+      id: 0,
+      name: "Computadoras",
+      options: [
+        { id: 0, name: "Monitores", value: catList.monitor },
+        { id: 1, name: "Procesadores", value: catList.proccessor },
+        { id: 2, name: "Tarjetas gráficas", value: catList.graphiCard },
+        { id: 3, name: "RAM", value: catList.ram },
+        { id: 4, name: "SSD", value: catList.ssd },
+        { id: 5, name: "Fuentes de poder", value: catList.powerSupply },
+      ],
+    },
+    {
+      id: 1,
+      name: "Teléfonos",
+      options: [
+        { id: 0, name: "Modelos", value: catList.phone },
+        { id: 1, name: "Forros", value: catList.case },
+        { id: 2, name: "Accesorios", value: catList.phone },
+      ],
+    },
+    {
+      id: 2,
+      name: "Otros",
+      options: [
+        {
+          id: 0,
+          name: "Accesorios",
+          value: catList.accessories,
+        },
+      ],
+    },
+  ];
+
+  const data = [
+    {
+      id: 0,
+      category: catList.monitor,
+      objects: [
+        {
+          id: 0,
+          brand: "Lenovo",
+          name: "Monitor",
+          model: "1280x720",
+          img: `${ui.img.monitor}`,
+          price: 1200,
+          tags: [tagList.recent],
+        },
+      ],
+    },
+    {
+      id: 1,
+      category: catList.proccessor,
+      objects: [
+        {
+          id: 0,
+          brand: "AMD",
+          name: "Procesador",
+          model: "Ryzen 7 5700",
+          img: `${ui.img.amdProcessor}`,
+          price: 475,
+          tags: [tagList.recent, tagList.ranked],
+        },
+      ],
+    },
+    {
+      id: 2,
+      category: catList.graphiCard,
+      objects: [
+        {
+          id: 0,
+          brand: "Nvidia",
+          name: "Tarjeta gráfica",
+          model: "RTX 4090 12Gb",
+          img: `${ui.img.graphicCard}`,
+          price: 475,
+          tags: [tagList.recent],
+        },
+      ],
+    },
+    {
+      id: 3,
+      category: catList.ram,
+      objects: [],
+    },
+    {
+      id: 4,
+      category: catList.ssd,
+      objects: [
+        {
+          id: 0,
+          brand: "Gigabyte",
+          name: "SSD m.2",
+          model: "2Tb",
+          img: `${ui.img.ssd}`,
+          price: 210,
+          tags: [tagList.recent, tagList.bests],
+        },
+      ],
+    },
+    {
+      id: 5,
+      category: catList.powerSupply,
+      objects: [
+        {
+          id: 0,
+          brand: "Corsair",
+          name: "Fuente de poder",
+          model: "80 Plus 500w",
+          img: `${ui.img.powerSupply}`,
+          price: 90,
+          tags: [tagList.recent],
+        },
+      ],
+    },
+    {
+      id: 6,
+      category: catList.phone,
+      objects: [
+        {
+          id: 0,
+          brand: "Apple",
+          name: "iPhone 16",
+          model: "Pro Max",
+          img: `${ui.img.iphone}`,
+          price: 2000,
+          tags: [tagList.recent, tagList.ranked],
+        },
+      ],
+    },
+    {
+      id: 7,
+      category: catList.case,
+      objects: [],
+    },
+    {
+      id: 8,
+      category: catList.phoneAccessories,
+      objects: [
+        {
+          id: 0,
+          brand: "Apple",
+          name: "Airpods",
+          model: "Estandar",
+          img: `${ui.img.earphones}`,
+          price: 120,
+          tags: [tagList.recent, tagList.bests],
+        },
+        {
+          id: 1,
+          brand: "Apple",
+          name: "Cargador",
+          model: "Tipo C",
+          img: `${ui.img.chargers}`,
+          price: 20,
+          tags: [tagList.recent, tagList.ranked, tagList.bests],
+        },
+      ],
+    },
+    {
+      id: 9,
+      category: catList.accessories,
+      objects: [],
+    },
+  ];
+
+  const render = (params: {
+    id: number;
+    brand: string;
+    name: string;
+    model: string;
+    img: string;
+    price: number;
+    tags?: string[] | undefined;
+  }) => {
+    return (
+      <>
+        <div key={params.id} className="w-56 bg-white p-3 xl:w-72 2xl:w-64">
+          <div className="flex w-full items-start justify-center">
+            <img className="h-48 w-auto" src={params.img} alt="" />
+          </div>
+          <h3 className="flex flex-row gap-2 text-start">
+            <span>{params.brand}</span>
+            <span>{params.name}</span>
+          </h3>
+          <sub className="flex flex-row gap-2 text-start">
+            <span>{params.model}</span>
+            <span>${params.price}</span>
+          </sub>
+        </div>
+      </>
+    );
+  };
+
   return (
     <>
       <section className="flex w-full flex-row justify-center gap-x-4 divide-x-2 divide-zinc-300 pt-4">
@@ -165,6 +412,108 @@ const Home = () => {
         <h3 className="py-2.5 font-semibold">
           Envío gratis por compra a partir de 50$
         </h3>
+      </section>
+      <br />
+      <section className="flex w-full flex-row justify-center gap-x-4 divide-x-2 divide-zinc-300">
+        <div className="w-1/4 max-w-sm py-4 ps-4">
+          <div className="flex flex-row justify-between">
+            <h2 className="cursor-default text-xl font-semibold">Categorías</h2>
+            <button
+              onClick={() => setCategory(null)}
+              className={`${category ? "text-sm text-gray-600" : "hidden"}`}
+            >
+              Borrar (x)
+            </button>
+          </div>
+          {/* Filters */}
+          <div className="grid grid-cols-1 gap-x-8 gap-y-10">
+            <form action="">
+              {filters.map((section) => (
+                <Disclosure
+                  key={section.id}
+                  as="div"
+                  className="border-b border-gray-200 py-6"
+                >
+                  <h3 className="-my-3 flow-root">
+                    <DisclosureButton className="group flex w-full items-center justify-between py-3 text-sm text-gray-400 hover:text-gray-500">
+                      <span className="font-medium text-gray-900">
+                        {section.name}
+                      </span>
+                      <span className="ml-6 flex items-center">
+                        <ui.icon.FaPlus
+                          aria-hidden="true"
+                          className="size-3 group-data-[open]:hidden"
+                        />
+                        <ui.icon.FaMinus
+                          aria-hidden="true"
+                          className="size-3 group-[&:not([data-open])]:hidden"
+                        />
+                      </span>
+                    </DisclosureButton>
+                  </h3>
+                  <DisclosurePanel className="pt-6">
+                    <ul className="ms-5 list-inside space-y-4 text-sm text-gray-600">
+                      {section.options.map((option) => (
+                        <li key={option.id}>
+                          <h4
+                            className={`${category === option.value ? "text-neutral-800" : "hover:text-neutral-800"} cursor-pointer`}
+                            onClick={() => setCategory(option.value)}
+                          >
+                            {option.name}
+                          </h4>
+                        </li>
+                      ))}
+                    </ul>
+                  </DisclosurePanel>
+                </Disclosure>
+              ))}
+            </form>
+          </div>
+          <br />
+          <div>
+            <img src={ui.img.banner5} alt="" />
+          </div>
+        </div>
+        <div className="flex w-3/4 max-w-6xl flex-col divide-y-2 divide-zinc-300 px-4 pb-6">
+          {/* tags */}
+          <div className="flex w-full flex-row gap-x-4">
+            {tags.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => setTag(item.value)}
+                className={`${tag === item.value ? "border-b-active border-opacity-100 text-active" : null} rounded-t-md border-b-2 border-opacity-0 px-2 pb-6 pt-4 hover:border-b-active hover:border-opacity-100 hover:bg-zinc-300 hover:text-active`}
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+          {/* object list */}
+          <div className="flex w-full flex-wrap gap-4 pt-6">
+            {category ? (
+              <>
+                {data
+                  .filter((item) => item.category === category)
+                  .map((item) => (
+                    <>
+                      {item.objects
+                        ?.filter((select) => select.tags.includes(tag))
+                        .map((select) => <>{render(select)}</>)}
+                    </>
+                  ))}
+              </>
+            ) : (
+              <>
+                {data.map((item) => (
+                  <>
+                    {item.objects
+                      ?.filter((select) => select.tags.includes(tag))
+                      .map((select) => <>{render(select)}</>)}
+                  </>
+                ))}
+              </>
+            )}
+          </div>
+        </div>
       </section>
       <section className="flex h-screen flex-row items-center justify-center">
         <img src="/Icon-PC-Amazing.ico" className="size-48" alt="React logo" />

@@ -78,50 +78,50 @@ function SimpleSlider() {
     <div className="slider-container">
       <Slider {...settings}>
         <div>
-          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
-            <Link to="/" className="w-96">
+          <div className="flex h-28 items-center justify-center px-4 3xl:px-6">
+            <Link to="/" className="w-56">
               <img src={ui.img.evga} alt="" />
             </Link>
           </div>
         </div>
         <div>
-          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
-            <Link to="/" className="w-96">
+          <div className="flex h-28 items-center justify-center px-4 3xl:px-6">
+            <Link to="/" className="w-56">
               <img src={ui.img.nvidia} alt="" />
             </Link>
           </div>
         </div>
         <div>
-          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
+          <div className="flex h-28 items-center justify-center px-4 3xl:px-6">
             <Link to="/">
-              <img className="h-full" src={ui.img.amd} alt="" />
+              <img className="h-28" src={ui.img.amd} alt="" />
             </Link>
           </div>
         </div>
         <div>
-          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
-            <Link to="/" className="w-96">
+          <div className="flex h-28 items-center justify-center px-4 3xl:px-6">
+            <Link to="/" className="w-56">
               <img src={ui.img.corsair} alt="" />
             </Link>
           </div>
         </div>
         <div>
-          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
-            <Link to="/" className="w-96">
+          <div className="flex h-28 items-center justify-center px-4 3xl:px-6">
+            <Link to="/" className="w-56">
               <img src={ui.img.asus} alt="" />
             </Link>
           </div>
         </div>
         <div>
-          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
+          <div className="flex h-28 items-center justify-center px-4 3xl:px-6">
             <Link to="/" className="h-full">
               <img className="h-full" src={ui.img.gigabyte} alt="" />
             </Link>
           </div>
         </div>
         <div>
-          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
-            <Link to="/" className="w-96">
+          <div className="flex h-28 items-center justify-center px-4 3xl:px-6">
+            <Link to="/" className="w-40">
               <img src={ui.img.intel} alt="" />
             </Link>
           </div>

@@ -4,6 +4,8 @@ import {
   FaSearch, // lupa
   FaCcMastercard, // tarjeta
   FaKeyboard, // teclado
+  FaPlus, // plus
+  FaMinus, // minus
 } from "react-icons/fa";
 import {
   BiSolidBookmark, // marcador
@@ -37,6 +39,8 @@ const icons = {
   FaSearch,
   FaCcMastercard,
   FaKeyboard,
+  FaPlus,
+  FaMinus,
   BiSolidBookmark,
   BiSolidHeartCircle,
   BiSolidOffer,
