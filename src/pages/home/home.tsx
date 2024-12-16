@@ -156,7 +156,7 @@ const Home = () => {
         <h1 className="text-4xl font-bold underline decoration-base underline-offset-4">
           Compra por marca
         </h1>
-        <div className="container mx-auto my-12 w-full max-w-[115rem] px-8">
+        <div className="container mx-auto my-8 w-full max-w-[115rem] px-8">
           <ui.carousel />
         </div>
       </section>

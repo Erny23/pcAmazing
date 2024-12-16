@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 import * as ui from "../../ui/index";
 
 function SampleNextArrow(props: { className: any; style: any; onClick: any }) {
@@ -32,7 +33,7 @@ function SimpleSlider() {
     centerMode: true,
     infinite: true,
     centerPadding: "1rem",
-    slidesToShow: 5,
+    slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
@@ -53,19 +54,21 @@ function SimpleSlider() {
     ),
     responsive: [
       {
-        breakpoint: 1536,
+        breakpoint: 1920,
         settings: {
           slidesToShow: 5,
-          slidesToScroll: 1,
-          centerPadding: "1.5rem",
+        },
+      },
+      {
+        breakpoint: 1536,
+        settings: {
+          slidesToShow: 4,
         },
       },
       {
         breakpoint: 1280,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
-          centerPadding: "0rem",
         },
       },
     ],
@@ -75,57 +78,52 @@ function SimpleSlider() {
     <div className="slider-container">
       <Slider {...settings}>
         <div>
-          <div className="flex items-center justify-center">
-            <img
-              className="size-72 xl:size-56 2xl:size-64 3xl:size-80"
-              src={ui.img.amdProcessor}
-              alt=""
-            />
+          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
+            <Link to="/" className="w-96">
+              <img src={ui.img.evga} alt="" />
+            </Link>
           </div>
         </div>
         <div>
-          <div className="flex items-center justify-center">
-            <img
-              className="size-72 xl:size-56 2xl:size-64 3xl:size-80"
-              src={ui.img.intelProcessor}
-              alt=""
-            />
+          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
+            <Link to="/" className="w-96">
+              <img src={ui.img.nvidia} alt="" />
+            </Link>
           </div>
         </div>
         <div>
-          <div className="flex items-center justify-center">
-            <img
-              className="size-72 xl:size-56 2xl:size-64 3xl:size-80"
-              src={ui.img.graphicCard}
-              alt=""
-            />
+          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
+            <Link to="/">
+              <img className="h-full" src={ui.img.amd} alt="" />
+            </Link>
           </div>
         </div>
         <div>
-          <div className="flex items-center justify-center">
-            <img
-              className="size-72 xl:size-56 2xl:size-64 3xl:size-80"
-              src={ui.img.monitor}
-              alt=""
-            />
+          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
+            <Link to="/" className="w-96">
+              <img src={ui.img.corsair} alt="" />
+            </Link>
           </div>
         </div>
         <div>
-          <div className="flex items-center justify-center">
-            <img
-              className="size-72 xl:size-56 2xl:size-64 3xl:size-80"
-              src={ui.img.powerSupply}
-              alt=""
-            />
+          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
+            <Link to="/" className="w-96">
+              <img src={ui.img.asus} alt="" />
+            </Link>
           </div>
         </div>
         <div>
-          <div className="flex items-center justify-center">
-            <img
-              className="size-72 xl:size-56 2xl:size-64 3xl:size-80"
-              src={ui.img.ssd}
-              alt=""
-            />
+          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
+            <Link to="/" className="h-full">
+              <img className="h-full" src={ui.img.gigabyte} alt="" />
+            </Link>
+          </div>
+        </div>
+        <div>
+          <div className="flex h-56 items-center justify-center px-4 3xl:px-6">
+            <Link to="/" className="w-96">
+              <img src={ui.img.intel} alt="" />
+            </Link>
           </div>
         </div>
       </Slider>

@@ -17,6 +17,13 @@ import banner1 from "../../assets/banner-1.jpg";
 import banner2 from "../../assets/banner-2.jpg";
 import banner3 from "../../assets/banner-3.jpg";
 import banner4 from "../../assets/banner-4.jpg";
+import evga from "../../assets/evga.png";
+import nvidia from "../../assets/nvidia.png";
+import amd from "../../assets/amd.png";
+import corsair from "../../assets/corsair.png";
+import asus from "../../assets/asus.png";
+import gigabyte from "../../assets/gigabyte.png";
+import intel from "../../assets/intel.png";
 
 const img = {
   graphicCard,
@@ -38,6 +45,13 @@ const img = {
   banner2,
   banner3,
   banner4,
+  evga,
+  nvidia,
+  amd,
+  corsair,
+  asus,
+  gigabyte,
+  intel,
 };
 
 export default img;
