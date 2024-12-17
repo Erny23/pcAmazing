@@ -27,6 +27,7 @@ import {
   FaCircle, // circulo
   FaShop, // tienda
   FaArrowRight, // flecha derecha
+  FaStar, // estrella
 } from "react-icons/fa6"; // teléfono
 import { TfiMoreAlt } from "react-icons/tfi"; // otros
 import { IoIosArrowDown } from "react-icons/io"; // flecha hacia abajo
@@ -55,6 +56,7 @@ const icons = {
   FaCircle,
   FaShop,
   FaArrowRight,
+  FaStar,
   TfiMoreAlt,
   TbTruckDelivery,
   SlScreenDesktop,

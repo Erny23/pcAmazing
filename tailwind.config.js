@@ -22,7 +22,7 @@ export default {
       // => @media (min-width: 1536px) { ... }
     },
     colors: {
-      base: "#0891b2",
+      default: "#0891b2",
       active: "#06b6d4",
       white: "#ffffff",
       black: "#000000",
@@ -52,6 +52,9 @@ export default {
         800: "#27272a",
         900: "#18181b",
         950: "#09090b",
+      },
+      yellow: {
+        500: "#facc15",
       },
       red: {
         500: "#ef4444",

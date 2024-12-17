@@ -11,6 +11,9 @@ import {
 const Home = () => {
   const [tag, setTag] = React.useState("recent");
   const [category, setCategory] = React.useState<string | null>(null);
+  const [more, setMore] = React.useState<boolean>(false);
+
+  const section3 = React.useRef<HTMLDivElement | null>(null);
 
   const tagList = {
     recent: "recent",
@@ -234,21 +237,53 @@ const Home = () => {
     return (
       <>
         <div key={params.id} className="w-56 bg-white p-3 xl:w-72 2xl:w-64">
-          <div className="flex w-full items-start justify-center">
+          <div className="relative flex w-full items-start justify-center">
             <img className="h-48 w-auto" src={params.img} alt="" />
+            <div className="absolute left-2 top-2">
+              {params.tags?.includes(tagList.recent) ? (
+                <h3 className="-skew-x-6 cursor-default bg-active p-2 text-xs font-bold uppercase text-white">
+                  Nuevo
+                </h3>
+              ) : null}
+            </div>
           </div>
-          <h3 className="flex flex-row gap-2 text-start">
-            <span>{params.brand}</span>
-            <span>{params.name}</span>
-          </h3>
-          <sub className="flex flex-row gap-2 text-start">
-            <span>{params.model}</span>
-            <span>${params.price}</span>
-          </sub>
+          <div className="px-2 py-4">
+            <div className="flex flex-row items-center justify-between leading-10">
+              <div className="flex flex-row gap-0.5">
+                <ui.icon.FaStar className="size-3 text-yellow-500" />
+                <ui.icon.FaStar className="size-3 text-yellow-500" />
+                <ui.icon.FaStar className="size-3 text-yellow-500" />
+                <ui.icon.FaStar className="size-3 text-yellow-500" />
+                <ui.icon.FaStar className="size-3 text-yellow-500" />
+              </div>
+              <div>
+                <span className="text-xs text-zinc-400">(5.0)</span>
+              </div>
+            </div>
+            <h3 className="flex flex-row gap-1 text-start text-base font-semibold leading-3">
+              <span>{params.brand}</span>
+              <span>{params.name}</span>
+            </h3>
+            <sub className="leading-3">{params.model}</sub>
+            <div className="mt-2.5 flex flex-row justify-between">
+              <button className="rounded-md bg-default p-1.5 text-sm font-semibold text-white hover:bg-active">
+                Comprar
+              </button>
+              <h4 className="text-end text-lg font-semibold">
+                ${params.price}
+              </h4>
+            </div>
+          </div>
         </div>
       </>
     );
   };
+
+  React.useEffect(() => {
+    if (!more) {
+      section3.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [more]);
 
   return (
     <>
@@ -317,26 +352,34 @@ const Home = () => {
           </div>
           <div className="mt-4 flex w-full cursor-default flex-row justify-between gap-x-4">
             <div className={style.banners3}>
-              <ui.icon.TbTruckDelivery />
               <div>
-                <h2>Delivery</h2>
-                <p>
-                  Recibe en la puerta de tu casa nuestro servicio de entrega
-                </p>
+                <ui.icon.TbTruckDelivery />
+                <span>
+                  <h2>Delivery</h2>
+                  <p>
+                    Recibe en la puerta de tu casa nuestro servicio de entrega
+                  </p>
+                </span>
               </div>
             </div>
             <div className={style.banners3}>
-              <ui.icon.FaShop />
               <div>
-                <h2>Pick up</h2>
-                <p>Recibe tus productos en nuestra tienda física</p>
+                <ui.icon.FaShop />
+                <span>
+                  <h2>Pick up</h2>
+                  <p>Recibe tus productos en nuestra tienda física</p>
+                </span>
               </div>
             </div>
             <div className={style.banners3}>
-              <ui.icon.FaCcMastercard />
               <div>
-                <h2>Métodos de pago</h2>
-                <p>Contamos opciones como Visa o MasterCard, Paypal y Zelle</p>
+                <ui.icon.FaCcMastercard />
+                <span>
+                  <h2>Métodos de pago</h2>
+                  <p>
+                    Contamos opciones como Visa o MasterCard, Paypal y Zelle
+                  </p>
+                </span>
               </div>
             </div>
           </div>
@@ -382,7 +425,7 @@ const Home = () => {
                 type="text"
                 placeholder="email"
               />
-              <button className="flex h-full w-12 items-center justify-center bg-base text-white hover:bg-active">
+              <button className="bg-base flex h-full w-12 items-center justify-center text-white hover:bg-active">
                 <ui.icon.FaArrowRight className="size-6" />
               </button>
             </div>
@@ -400,7 +443,7 @@ const Home = () => {
       </section>
       <br />
       <section className="mt-8 flex w-full flex-col items-center">
-        <h1 className="text-4xl font-bold underline decoration-base underline-offset-4">
+        <h1 className="decoration-base text-4xl font-bold underline underline-offset-4">
           Compra por marca
         </h1>
         <div className="container mx-auto my-8 w-full max-w-[115rem] px-8">
@@ -474,7 +517,10 @@ const Home = () => {
             <img src={ui.img.banner5} alt="" />
           </div>
         </div>
-        <div className="flex w-3/4 max-w-6xl flex-col divide-y-2 divide-zinc-300 px-4 pb-6">
+        <div
+          ref={section3}
+          className="flex w-3/4 max-w-6xl flex-col divide-y-2 divide-zinc-300 px-4 pb-6"
+        >
           {/* tags */}
           <div className="flex w-full flex-row gap-x-4">
             {tags.map((item) => (
@@ -488,7 +534,9 @@ const Home = () => {
             ))}
           </div>
           {/* object list */}
-          <div className="flex w-full flex-wrap gap-4 pt-6">
+          <div
+            className={`${more ? "h-full overflow-y-visible" : "h-[32rem] overflow-y-hidden"} relative flex w-full flex-wrap gap-4 pt-6 transition-all delay-150 duration-1000`}
+          >
             {category ? (
               <>
                 {data
@@ -512,6 +560,23 @@ const Home = () => {
                 ))}
               </>
             )}
+            <div
+              className={`${more ? "opacity-0" : "opacity-100"} absolute -bottom-14 h-24 w-full bg-zinc-200 blur-lg transition-all delay-0 duration-100`}
+            ></div>
+          </div>
+          <div className="mt-5 flex w-full justify-center">
+            <button
+              onClick={() => {
+                if (more) {
+                  setMore(false);
+                } else {
+                  setMore(true);
+                }
+              }}
+              className="mt-2.5 rounded-md bg-default p-2.5 text-white hover:bg-active"
+            >
+              {more ? <p>Ver menos</p> : <p>Ver más</p>}
+            </button>
           </div>
         </div>
       </section>
