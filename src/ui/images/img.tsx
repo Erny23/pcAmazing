@@ -18,6 +18,8 @@ import banner2 from "../../assets/banner-2.jpg";
 import banner3 from "../../assets/banner-3.jpg";
 import banner4 from "../../assets/banner-4.jpg";
 import banner5 from "../../assets/banner-5.webp";
+import banner6 from "../../assets/prime-gaming.png";
+import banner7 from "../../assets/banner-7.webp";
 import evga from "../../assets/evga.png";
 import nvidia from "../../assets/nvidia.png";
 import amd from "../../assets/amd.png";
@@ -47,6 +49,8 @@ const img = {
   banner3,
   banner4,
   banner5,
+  banner6,
+  banner7,
   evga,
   nvidia,
   amd,

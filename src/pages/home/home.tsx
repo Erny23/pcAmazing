@@ -11,7 +11,7 @@ import {
 const Home = () => {
   const [tag, setTag] = React.useState("recent");
   const [category, setCategory] = React.useState<string | null>(null);
-  const [more, setMore] = React.useState<boolean>(false);
+  const [more, setMore] = React.useState<boolean | null>(null);
 
   const section3 = React.useRef<HTMLDivElement | null>(null);
 
@@ -280,7 +280,7 @@ const Home = () => {
   };
 
   React.useEffect(() => {
-    if (!more) {
+    if (!more && more !== null) {
       section3.current?.scrollIntoView({ behavior: "smooth" });
     }
   }, [more]);
@@ -578,6 +578,19 @@ const Home = () => {
               {more ? <p>Ver menos</p> : <p>Ver más</p>}
             </button>
           </div>
+        </div>
+      </section>
+      <br />
+      <section className="relative flex w-full items-center justify-center overflow-y-hidden">
+        <img className="absolute inset-0" src={ui.img.banner7} alt="" />
+        <div className="absolute inset-0 z-10 bg-violet-800/60"></div>
+        <div className="group relative z-20 py-16">
+          <div className="absolute -inset-x-10 inset-y-16 z-0 rounded-full transition-all group-hover:bg-white/20 group-hover:blur-3xl"></div>
+          <img
+            className="relative z-10 w-96 drop-shadow-2xl"
+            src={ui.img.banner6}
+            alt=""
+          />
         </div>
       </section>
       <section className="flex h-screen flex-row items-center justify-center">
